@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 
@@ -14,7 +15,7 @@ const ChatBot = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (userMessage.trim()) {
             const newMessages = [
                 ...messages,
@@ -22,20 +23,21 @@ const ChatBot = () => {
             ];
             setMessages(newMessages);
             setUserMessage("");
-            handleBotResponse();
+            handleBotResponse(); // Chama a função para simular a resposta do bot
         }
     };
 
     const handleBotResponse = () => {
-        setIsLoading(true);
+        setIsLoading(true); // Começa o carregamento
 
+        // Simula o tempo de espera para a resposta do bot
         setTimeout(() => {
             setMessages((prevMessages) => [
                 ...prevMessages,
-                { text: "Essa é uma resposta automática.", sender: "bot" },
+                { text: "Essa é uma resposta automática.", sender: "bot" }, // Resposta do bot
             ]);
-            setIsLoading(false);
-        }, 2000);
+            setIsLoading(false); // Para o carregamento
+        }, 2000); // Tempo em milissegundos (2 segundos)
     };
 
     return (
@@ -81,6 +83,7 @@ const ChatBot = () => {
 
 export default ChatBot;
 
+// Estilos do Chat
 const ChatContainer = styled.div`
   position: fixed;
   bottom: 10px;
