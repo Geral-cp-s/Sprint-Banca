@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 const ChatBot = () => {
@@ -7,13 +8,13 @@ const ChatBot = () => {
         { text: "Olá! Como posso te ajudar?", sender: "bot" },
     ]);
     const [userMessage, setUserMessage] = useState("");
-    const [isLoading, setIsLoading] = useState(false); // Estado para controlar o carregamento
+    const [isLoading, setIsLoading] = useState(false);
 
     const toggleChat = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (userMessage.trim()) {
             const newMessages = [
                 ...messages,
@@ -21,21 +22,61 @@ const ChatBot = () => {
             ];
             setMessages(newMessages);
             setUserMessage("");
-            handleBotResponse(); // Chama a função para simular a resposta do bot
+            await handleBotResponse(userMessage);
         }
     };
 
-    const handleBotResponse = () => {
-        setIsLoading(true); // Começa o carregamento
+    const handleBotResponse = async (userMessage) => {
+        setIsLoading(true);
 
-        // Simula o tempo de espera para a resposta do bot
-        setTimeout(() => {
+        try {
+            // Atraso de 2 segundos antes de fazer a requisição
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            const response = await axios.post(
+                'https://api.openai.com/v1/chat/completions',
+                {
+                    model: 'gpt-3.5-turbo',
+                    messages: [{ role: 'user', content: userMessage }],
+                },
+                {
+                    headers: {
+                        'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+
+            const botReply = response.data.choices[0].message.content;
             setMessages((prevMessages) => [
                 ...prevMessages,
-                { text: "Essa é uma resposta automática.", sender: "bot" }, // Resposta do bot
+                { text: botReply, sender: "bot" },
             ]);
-            setIsLoading(false); // Para o carregamento
-        }, 2000); // Tempo em milissegundos (2 segundos)
+        } catch (error) {
+            console.error("Erro ao comunicar com a API:", error);
+            if (error.response) {
+                // Captura a resposta da API
+                const { status, data } = error.response;
+                if (status === 429) {
+                    setMessages((prevMessages) => [
+                        ...prevMessages,
+                        { text: "Desculpe, estou sobrecarregado. Tente novamente mais tarde.", sender: "bot" },
+                    ]);
+                } else {
+                    setMessages((prevMessages) => [
+                        ...prevMessages,
+                        { text: "Desculpe, não consegui responder.", sender: "bot" },
+                    ]);
+                }
+            } else {
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    { text: "Erro desconhecido. Tente novamente mais tarde.", sender: "bot" },
+                ]);
+            }
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -56,7 +97,7 @@ const ChatBot = () => {
                                 </BotMessage>
                             )
                         ))}
-                        {isLoading && <LoadingIndicator>...</LoadingIndicator>} {/* Exibe os três pontinhos */}
+                        {isLoading && <LoadingIndicator>...</LoadingIndicator>}
                     </ChatMessages>
                     <ChatInputContainer>
                         <ChatInput
@@ -76,6 +117,7 @@ const ChatBot = () => {
 
 export default ChatBot;
 
+// Estilos do Chat
 const ChatContainer = styled.div`
   position: fixed;
   bottom: 20px;
@@ -141,7 +183,6 @@ const UserMessage = styled.div`
   align-self: flex-end;
   max-width: 80%;
   font-size: 14px;
-  margin-left: 140px;
 `;
 
 const LoadingIndicator = styled.div`
