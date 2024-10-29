@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +8,7 @@ const ChatBot = () => {
         { text: "Olá! Como posso te ajudar?", sender: "bot" },
     ]);
     const [userMessage, setUserMessage] = useState("");
-    const [isLoading, setIsLoading] = useState(false); // Estado para controlar o carregamento
+    const [isLoading, setIsLoading] = useState(false);
 
     const toggleChat = () => {
         setIsOpen(!isOpen);
@@ -21,42 +22,46 @@ const ChatBot = () => {
             ];
             setMessages(newMessages);
             setUserMessage("");
-            handleBotResponse(); // Chama a função para simular a resposta do bot
+            handleBotResponse();
         }
     };
 
     const handleBotResponse = () => {
-        setIsLoading(true); // Começa o carregamento
+        setIsLoading(true);
 
-        // Simula o tempo de espera para a resposta do bot
         setTimeout(() => {
             setMessages((prevMessages) => [
                 ...prevMessages,
-                { text: "Essa é uma resposta automática.", sender: "bot" }, // Resposta do bot
+                { text: "Essa é uma resposta automática.", sender: "bot" },
             ]);
-            setIsLoading(false); // Para o carregamento
-        }, 2000); // Tempo em milissegundos (2 segundos)
+            setIsLoading(false);
+        }, 2000);
     };
 
     return (
         <ChatContainer>
-            <ChatButton onClick={toggleChat}>{isOpen ? "Fechar Chat" : "Abrir Chat"}</ChatButton>
+            {!isOpen && (
+                <ChatButton onClick={toggleChat}>
+                    <ChatImage src="./img/chatbot.png" alt="Abrir Chat" />
+                </ChatButton>
+            )}
             {isOpen && (
                 <ChatWindow>
-                    <ChatHeader>Chatbot</ChatHeader>
+                    <ChatHeader>
+                        Chatbot
+                        <CloseButton onClick={toggleChat}>
+                            <AiOutlineClose size={20} />
+                        </CloseButton>
+                    </ChatHeader>
                     <ChatMessages>
                         {messages.map((msg, index) => (
                             msg.sender === "user" ? (
-                                <UserMessage key={index}>
-                                    {msg.text}
-                                </UserMessage>
+                                <UserMessage key={index}>{msg.text}</UserMessage>
                             ) : (
-                                <BotMessage key={index}>
-                                    {msg.text}
-                                </BotMessage>
+                                <BotMessage key={index}>{msg.text}</BotMessage>
                             )
                         ))}
-                        {isLoading && <LoadingIndicator>...</LoadingIndicator>} {/* Exibe os três pontinhos */}
+                        {isLoading && <LoadingIndicator>...</LoadingIndicator>}
                     </ChatMessages>
                     <ChatInputContainer>
                         <ChatInput
@@ -78,22 +83,21 @@ export default ChatBot;
 
 const ChatContainer = styled.div`
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
+  bottom: 10px;
+  right: 10px;
   z-index: 1000;
 `;
 
 const ChatButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #0077ff;
-  color: #fff;
+  background: none;
   border: none;
-  border-radius: 5px;
+  padding: 0;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+`;
+
+const ChatImage = styled.img`
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px;
 `;
 
 const ChatWindow = styled.div`
@@ -103,16 +107,26 @@ const ChatWindow = styled.div`
   display: flex;
   flex-direction: column;
   height: 400px;
+  width: 300px;
   margin-top: 10px;
 `;
 
 const ChatHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #0077ff;
   color: #ffffff;
   padding: 10px;
   font-weight: bold;
-  text-align: center;
   border-radius: 8px 8px 0 0;
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
 `;
 
 const ChatMessages = styled.div`
@@ -141,7 +155,6 @@ const UserMessage = styled.div`
   align-self: flex-end;
   max-width: 80%;
   font-size: 14px;
-  margin-left: 140px;
 `;
 
 const LoadingIndicator = styled.div`
