@@ -42,7 +42,7 @@ const ChatBot = () => {
         <ChatContainer>
             {!isOpen && (
                 <ChatButton onClick={toggleChat}>
-                    <ChatImage src="./img/chatbot.png" alt="Abrir Chat" />
+                    <ChatImage src="/img/chatbot.png" alt="Abrir Chat" />
                 </ChatButton>
             )}
             {isOpen && (

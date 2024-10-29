@@ -20,6 +20,7 @@ import Memoria from './routes/Memoria.jsx'
 import Corrida from './routes/Corrida.jsx'
 import MiniGames from './routes/MiniGames.jsx'
 import Desenho from './routes/Desenho.jsx'
+import EquipesTruck from './routes/EquipesTruck.jsx'
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
       {path:'/comparativos', element:<Comparativos/>},
       {path:'/projeto', element:<Projeto/>},
       {path:'/formula-e/equipes', element:<Equipes/>},
+      {path:'/formula-truck/pilotos', element:<EquipesTruck/>},
       {path:'/forum', element:<Forum/>},
       {path:'/conta', element:<Conta/>},
       {path:'/assinatura', element:<Assinatura/>},
