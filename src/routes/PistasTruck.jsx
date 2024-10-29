@@ -2,33 +2,29 @@ import React, { useState } from "react";
 import { Container, Card, DateSection, DetailsSection, FlagSection, ImageSection, Modal, ModalContent, CloseButton,  } from "../components/Pistas/styledPistas";
 import ModalInfo from "../components/Pistas/ModalInfo";
 
-import flagBra from '../../public/img/bandeira/uruguai.png';
-import pistaBra from '../../public/img/pistas/rivera.jpg';
-import circuitoBra from '../../public/img/circuito/sp.png';
+import flagRiv from '../../public/img/bandeira/uruguai.png';
+import pistaRiv from '../../public/img/pistas/rivera.jpg';
+import circuitoRiv from '../../public/img/circuito/rivera.jpg';
 
-import flagMex from '../../public/img/bandeira/mex.png';
-import pistaMex from '../../public/img/pistas/mexico.jpg';
-import circuitoMex from '../../public/img/circuito/mex.png';
+import flagGua from '../../public/img/bandeira/brasil.png';
+import pistaGua from '../../public/img/pistas/guapore.jpg';
+import circuitoGua from '../../public/img/circuito/guarapore.jpg';
 
-import flagJed from '../../public/img/bandeira/arabia.png';
-import pistaJed from '../../public/img/pistas/jeddah.jpg';
-import circuitoJed from '../../public/img/circuito/jeddah.jpg';
+import flagCas from '../../public/img/bandeira/brasil.png';
+import pistaCas from '../../public/img/pistas/cascavel.jpg';
+import circuitoCas from '../../public/img/circuito/cascavel.png';
 
-//import flagMex from '../../public/img/bandeira/mex.png';
-import pistaTbc from '../../public/img/atention.png';
-//import circuitoMex from '../../public/img/circuito/mex.png';
+import flagCG from '../../public/img/bandeira/brasil.png';
+import pistaCG from '../../public/img/pistas/cg.webp';
+import circuitoCG from '../../public/img/circuito/cg.png';
 
-import flagMia from '../../public/img/bandeira/eua.png';
-import pistaMia from '../../public/img/pistas/miami.jpg';
-import circuitoMia from '../../public/img/circuito/miami.webp';
+import flagLon from '../../public/img/bandeira/brasil.png';
+import pistaLon from '../../public/img/pistas/londrina.webp';
+import circuitoLon from '../../public/img/circuito/londrina.png';
 
-import flagMon from '../../public/img/bandeira/monaco.png';
-import pistaMon from '../../public/img/pistas/monaco.jpeg';
-import circuitoMon from '../../public/img/circuito/monaco.png';
-
-import flagTok from '../../public/img/bandeira/japao.png';
-import pistaTok from '../../public/img/pistas/japao.jpg';
-import circuitoTok from '../../public/img/circuito/jap.png';
+import flagVia from '../../public/img/bandeira/brasil.png';
+import pistaVia from '../../public/img/pistas/viamao.jpg';
+import circuitoVia from '../../public/img/circuito/viamao.svg';
 
 
 const PistasTruck = () => {
@@ -43,164 +39,164 @@ const PistasTruck = () => {
     };
 
     const pistasData = [
-        // SÃO PAULO
+        // RIVERA
         {
             id: 1,
             day: "24",
             month: "MAR",
             city: "RIVERA",
-            flag: flagBra,  // Import direto
-            image: pistaBra, // Import direto
+            flag: flagRiv,  // Import direto
+            image: pistaRiv, // Import direto
             modalInfo: {
-                img: circuitoBra,
-                circuit: "CIRCUITO RUA DE SÃO PAULO",
+                img: circuitoRiv,
+                circuit: "---",
                 round: "1",
-                description: "- Com três longas retas conectadas por chicanes complicadas, curvas fechadas e curvas fechadas, o circuito de São Paulo é uma volta desafiadora para o pelotão.",
-                extension: "- 2.933 km de extensão e 11 curvas.",
-                attackMode: "Modo ataque se localiza entre as curvas 11 e 12.",
+                description: "---",
+                extension: "---",
+                attackMode: "---",
                 winner: "---",
             },
         },
-        // MEXICO
+        // Guaraporé
         {
             id: 1,
-            day: "11",
-            month: "JAN",
-            city: "CIDADE DO MÉXICO",
-            flag: flagMex,  // Import direto
-            image: pistaMex, // Import direto
+            day: "21",
+            month: "ABR",
+            city: "GUAPORÉ",
+            flag: flagGua,  // Import direto
+            image: pistaGua, // Import direto
             modalInfo: {
-                img: circuitoMex,
-                circuit: "AUTÓDROMO HERMANOS RODRÍGUEZ",
+                img: circuitoGua,
+                circuit: "---",
                 round: "2",
-                description: "- O traçado da pista apresenta uma mistura de retas longas e rápidas e uma seção técnica interna através do lendário estádio Foro Sol.",
-                extension: "2606 metros de extensão e 19 curvas.",
-                attackMode: "Modo ataque se localiza entre as curvas 11 e 12.",
+                description: "---",
+                extension: "---",
+                attackMode: "---",
                 winner: "---",
             },
         },
-        // JEDDAH 1
+        // Cascavel
         {
             id: 1,
-            day: "14",
-            month: "FEV",
-            city: "JEDDAH",
-            flag: flagJed,  // Import direto
-            image: pistaJed, // Import direto
+            day: "2",
+            month: "JUN",
+            city: "CASCAVEL",
+            flag: flagCas,  // Import direto
+            image: pistaCas, // Import direto
             modalInfo: {
-                img: circuitoJed,
+                img: circuitoCas,
                 circuit: "---",
                 round: "3",
-                description: "SEM INFORMAÇÕES SOBRE O CIRCUITO",
+                description: "---",
                 extension: "---",
                 attackMode: "---",
                 winner: "---",
             },
         },
-        // JEDDAH 2
+        // Campo Grande
         {
             id: 1,
-            day: "15",
-            month: "FEV",
-            city: "JEDDAH",
-            flag: flagJed,  // Import direto
-            image: pistaJed, // Import direto
+            day: "30",
+            month: "JUN",
+            city: "CAMPO GRANDE",
+            flag: flagCG,  // Import direto
+            image: pistaCG, // Import direto
             modalInfo: {
-                img: circuitoJed,
+                img: circuitoCG,
                 circuit: "---",
                 round: "4",
-                description: "SEM INFORMAÇÕES SOBRE O CIRCUITO",
+                description: "---",
                 extension: "---",
                 attackMode: "---",
                 winner: "---",
             },
         },
-        // TBC
+        // Londrina
+        {
+            id: 1,
+            day: "04",
+            month: "AGO",
+            city: "LONDRINA",
+            flag: flagLon,  // Import direto
+            image: pistaLon, // Import direto
+            modalInfo: {
+                img: circuitoLon,
+                circuit: "---",
+                round: "5",
+                description: "---",
+                extension: "---",
+                attackMode: "---",
+                winner: "---",
+            },
+        },
+        // Guarapore 2
         {
             id: 1,
             day: "08",
-            month: "MAR",
-            city: "TBC",
-            // flag: flagJed,  // Import direto
-            image: pistaTbc, // Import direto
-            // modalInfo: {
-            //     // img: circuitoJed,
-            //     circuit: "---",
-            //     round: "5",
-            //     description: "SEM INFORMAÇÕES SOBRE O CIRCUITO",
-            //     extension: "---",
-            //     attackMode: "---",
-            //     winner: "---",
-            // },
-        },
-        // MIAMI
-        {
-            id: 1,
-            day: "12",
-            month: "ABR",
-            city: "MIAMI",
-            flag: flagMia,  // Import direto
-            image: pistaMia, // Import direto
+            month: "SET",
+            city: "GUAPORÉ",
+            flag: flagGua,  // Import direto
+            image: pistaGua, // Import direto
             modalInfo: {
-                img: circuitoMia,
+                img: circuitoGua,
                 circuit: "---",
-                round: "6",
-                description: "--SEM INFORMAÇÕES SOBRE O CIRCUITO--",
+                round: "2",
+                description: "---",
                 extension: "---",
                 attackMode: "---",
                 winner: "---",
             },
         },
-        // MONACO 1
+        // Rivera 2
         {
             id: 1,
-            day: "3",
-            month: "MAI",
-            city: "MONACO",
-            flag: flagMon,  // Import direto
-            image: pistaMon, // Import direto
+            day: "13",
+            month: "OUT",
+            city: "RIVERA",
+            flag: flagRiv,  // Import direto
+            image: pistaRiv, // Import direto
             modalInfo: {
-                img: circuitoMon,
-                circuit: "CIRCUITO DE MÔNACO",
+                img: circuitoRiv,
+                circuit: "---",
                 round: "7",
-                description: "- O traçado da pista apresenta uma mistura de retas longas e rápidas e uma seção técnica interna através do lendário estádio Foro Sol.",
-                extension: "2606 metros de extensão e 19 curvas.",
-                attackMode: "Modo ataque se localiza entre as curvas 11 e 12.",
+                description: "---",
+                extension: "---",
+                attackMode: "---",
                 winner: "---",
             },
         },
-        // MONACO 2
+        // Viamão
         {
             id: 1,
-            day: "4",
-            month: "MAI",
-            city: "MONACO",
-            flag: flagMon,  // Import direto
-            image: pistaMon, // Import direto
+            day: "10",
+            month: "NOV",
+            city: "VIAMÃO",
+            flag: flagVia,  // Import direto
+            image: pistaVia, // Import direto
             modalInfo: {
-                img: circuitoMon,
-                circuit: "CIRCUITO DE MÔNACO",
+                img: circuitoVia,
+                circuit: "---",
                 round: "8",
-                description: "- La Rascasse, Casino Square e Grand Hotel Hairpin - há poucas esquinas que evocam a lenda do automobilismo do que as ruas sinuosas que margeiam o circuito de Mônaco.",
-                extension: "2606 metros de extensão e 19 curvas.",
-                attackMode: "Modo ataque se localiza entre as curvas 11 e 12.",
+                description: "---",
+                extension: "---",
+                attackMode: "---",
                 winner: "---",
             },
         },
-        // TOKYO 1
+        // Cascavel 2
         {
             id: 1,
-            day: "17",
-            month: "MAI",
-            city: "TOKYO",
-            flag: flagTok,  // Import direto
-            image: pistaTok, // Import direto
+            day: "1",
+            month: "DEZ",
+            city: "CASCAVEL",
+            flag: flagCas,  // Import direto
+            image: pistaCas, // Import direto
             modalInfo: {
-                img: circuitoTok,
-                circuit: "CIRCUITO DE RUA DE TÓQUIO",
+                img: circuitoCas,
+                circuit: "---",
                 round: "9",
-                extension: "- 2,585 km de extensão e 20 curvas.",
-                attackMode: "- Modo Ataque ficará na parte externa da curva 4.",
+                extension: "---",
+                attackMode: "---.",
                 winner: "---",
             },
         }
