@@ -21,6 +21,7 @@ import Corrida from './routes/Corrida.jsx'
 import MiniGames from './routes/MiniGames.jsx'
 import Desenho from './routes/Desenho.jsx'
 import EquipesTruck from './routes/EquipesTruck.jsx'
+import PistasTruck from './routes/PistasTruck.jsx'
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
     children:[
       {path:'/', element:<Home/>},
       {path:'/formula-e/pistas', element:<Pistas/>},
+      {path:'/formula-truck/pistas', element:<PistasTruck/>},
       {path:'/login', element:<Login/>},
       {path:'/quem-somos', element:<QuemSomos/>},
       {path:'/comparativos', element:<Comparativos/>},
