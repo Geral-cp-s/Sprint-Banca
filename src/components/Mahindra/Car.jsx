@@ -15,14 +15,14 @@ function Car() {
 
   return (
     <>
-      <CarImage src="/img/mahindra/carro.png" alt="Mahindra Car" onClick={openModal} />
+      <CarImage src="/img/Formula-E/mahindra/carro.png" alt="Mahindra Car" onClick={openModal} />
 
       {isModalOpen && (
         <Modal className="modal" onClick={handleClickOutside}>
           <ModalContent className="modal-content">
             <CloseButton onClick={closeModal}>&times;</CloseButton>
             <ModalTitle>Informações do carro</ModalTitle>
-            <ModalImage src="/public/img/mahindra/carro.png" alt="Mahindra Car" />
+            <ModalImage src="/img/Formula-E/mahindra/carro.png" alt="Mahindra Car" />
             <DetailsContainer>
               <DetailItem>
                 <span>Motor:</span>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,79 +23,44 @@ const ChatBot = () => {
             ];
             setMessages(newMessages);
             setUserMessage("");
-            await handleBotResponse(userMessage);
+            handleBotResponse(); // Chama a função para simular a resposta do bot
         }
     };
 
-    const handleBotResponse = async (userMessage) => {
-        setIsLoading(true);
+    const handleBotResponse = () => {
+        setIsLoading(true); // Começa o carregamento
 
-        try {
-            // Atraso de 2 segundos antes de fazer a requisição
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            const response = await axios.post(
-                'https://api.openai.com/v1/chat/completions',
-                {
-                    model: 'gpt-3.5-turbo',
-                    messages: [{ role: 'user', content: userMessage }],
-                },
-                {
-                    headers: {
-                        'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-                        'Content-Type': 'application/json',
-                    },
-                }
-            );
-
-            const botReply = response.data.choices[0].message.content;
+        // Simula o tempo de espera para a resposta do bot
+        setTimeout(() => {
             setMessages((prevMessages) => [
                 ...prevMessages,
-                { text: botReply, sender: "bot" },
+                { text: "Essa é uma resposta automática.", sender: "bot" }, // Resposta do bot
             ]);
-        } catch (error) {
-            console.error("Erro ao comunicar com a API:", error);
-            if (error.response) {
-                // Captura a resposta da API
-                const { status, data } = error.response;
-                if (status === 429) {
-                    setMessages((prevMessages) => [
-                        ...prevMessages,
-                        { text: "Desculpe, estou sobrecarregado. Tente novamente mais tarde.", sender: "bot" },
-                    ]);
-                } else {
-                    setMessages((prevMessages) => [
-                        ...prevMessages,
-                        { text: "Desculpe, não consegui responder.", sender: "bot" },
-                    ]);
-                }
-            } else {
-                setMessages((prevMessages) => [
-                    ...prevMessages,
-                    { text: "Erro desconhecido. Tente novamente mais tarde.", sender: "bot" },
-                ]);
-            }
-        } finally {
-            setIsLoading(false);
-        }
+            setIsLoading(false); // Para o carregamento
+        }, 2000); // Tempo em milissegundos (2 segundos)
     };
 
     return (
         <ChatContainer>
-            <ChatButton onClick={toggleChat}>{isOpen ? "Fechar Chat" : "Abrir Chat"}</ChatButton>
+            {!isOpen && (
+                <ChatButton onClick={toggleChat}>
+                    <ChatImage src="/img/chatbot.png" alt="Abrir Chat" />
+                </ChatButton>
+            )}
             {isOpen && (
                 <ChatWindow>
-                    <ChatHeader>Chatbot</ChatHeader>
+                    <ChatHeader>
+                        Chatbot
+                        <CloseButton onClick={toggleChat}>
+                            <AiOutlineClose size={20} />
+                        </CloseButton>
+                    </ChatHeader>
                     <ChatMessages>
                         {messages.map((msg, index) => (
                             msg.sender === "user" ? (
-                                <UserMessage key={index}>
-                                    {msg.text}
-                                </UserMessage>
+                                <UserMessage key={index}>{msg.text}</UserMessage>
                             ) : (
-                                <BotMessage key={index}>
-                                    {msg.text}
-                                </BotMessage>
+                                <BotMessage key={index}>{msg.text}</BotMessage>
                             )
                         ))}
                         {isLoading && <LoadingIndicator>...</LoadingIndicator>}
@@ -120,22 +86,21 @@ export default ChatBot;
 // Estilos do Chat
 const ChatContainer = styled.div`
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
+  bottom: 10px;
+  right: 10px;
   z-index: 1000;
 `;
 
 const ChatButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #0077ff;
-  color: #fff;
+  background: none;
   border: none;
-  border-radius: 5px;
+  padding: 0;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+`;
+
+const ChatImage = styled.img`
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px;
 `;
 
 const ChatWindow = styled.div`
@@ -145,16 +110,26 @@ const ChatWindow = styled.div`
   display: flex;
   flex-direction: column;
   height: 400px;
+  width: 300px;
   margin-top: 10px;
 `;
 
 const ChatHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #0077ff;
   color: #ffffff;
   padding: 10px;
   font-weight: bold;
-  text-align: center;
   border-radius: 8px 8px 0 0;
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
 `;
 
 const ChatMessages = styled.div`
