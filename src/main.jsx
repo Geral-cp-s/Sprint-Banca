@@ -8,7 +8,7 @@ import Pistas from './routes/Pistas.jsx'
 import Login from './routes/Login.jsx'
 import QuemSomos from './routes/QuemSomos.jsx'
 import Comparativos from './routes/Comparativos.jsx'
-import Equipes from './routes/Equipes.jsx'
+import Equipes from './routes/EquipesE.jsx'
 import Mahindra from './routes/Mahindra.jsx'
 import GlobalStyled from './global-styled.js'
 import Forum from './routes/Forum.jsx'
@@ -31,12 +31,12 @@ const router = createBrowserRouter([
     //Elemento FILHO
     children:[
       {path:'/', element:<Home/>},
-      {path:'/pistas', element:<Pistas/>},
+      {path:'/formula-e/pistas', element:<Pistas/>},
       {path:'/login', element:<Login/>},
       {path:'/quem-somos', element:<QuemSomos/>},
       {path:'/comparativos', element:<Comparativos/>},
       {path:'/projeto', element:<Projeto/>},
-      {path:'/equipes', element:<Equipes/>},
+      {path:'/formula-e/equipes', element:<Equipes/>},
       {path:'/forum', element:<Forum/>},
       {path:'/conta', element:<Conta/>},
       {path:'/assinatura', element:<Assinatura/>},
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {path:'/desenho', element:<Desenho/>},
 
       //Chamando as equipes
-      {path:'/equipes/mahindra', element:<Mahindra/>}
+      {path:'/formula-e/equipes/mahindra', element:<Mahindra/>}
     ]
   }
 ])

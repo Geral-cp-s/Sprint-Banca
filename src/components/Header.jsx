@@ -64,8 +64,8 @@ const Header = () => {
                   Fórmula-E <i className="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
                 <ul className="dropdown__menu">
-                  <li><Link to="/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
-                  <li><Link to="/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
+                  <li><Link to="/formula-e/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
+                  <li><Link to="/formula-e/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
                   <li><Link to="/minigames" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mini-Jogos</Link></li>
                 </ul>
               </li>

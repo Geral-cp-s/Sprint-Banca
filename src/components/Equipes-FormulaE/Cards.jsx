@@ -10,38 +10,38 @@ import {
 } from './styledEquipes';
 
 // Importando as imagens
-import abtCupraCar from '../../../public/img/abt-cupra/carro.png';
-import abtCupraLogo from '../../../public/img/abt-cupra/logo.png';
+import abtCupraCar from '../../../public/img/Formula-E/abt-cupra/carro.png';
+import abtCupraLogo from '../../../public/img/Formula-E/abt-cupra/logo.png';
 
-import andrettiLogo from '../../../public/img/andretti/Logo-Andretti.webp';
-import andrettiCar from '../../../public/img/andretti/carro.png';
+import andrettiLogo from '../../../public/img/Formula-E/andretti/Logo-Andretti.webp';
+import andrettiCar from '../../../public/img/Formula-E/andretti/carro.png';
 
-import dsPenskeLogo from '../../../public/img/DS PENSKE/logo.png';
-import dsPenskeCar from '../../../public/img/DS PENSKE/carro.png';
+import dsPenskeLogo from '../../../public/img/Formula-E/DS PENSKE/logo.png';
+import dsPenskeCar from '../../../public/img/Formula-E/DS PENSKE/carro.png';
 
-import envisionLogo from '../../../public/img/ENVISION RACING/logo.png';
-import envisionCar from '../../../public/img/ENVISION RACING/carro.png';
+import envisionLogo from '../../../public/img/Formula-E/ENVISION RACING/logo.png';
+import envisionCar from '../../../public/img/Formula-E/ENVISION RACING/carro.png';
 
-import ertLogo from '../../../public/img/ERT FORMULA E TEAM/logo.jpg';
-import ertCar from '../../../public/img/ERT FORMULA E TEAM/carro.png';
+import ertLogo from '../../../public/img/Formula-E/ERT FORMULA E TEAM/logo.jpg';
+import ertCar from '../../../public/img/Formula-E/ERT FORMULA E TEAM/carro.png';
 
-import jaguarLogo from '../../../public/img/JAGUAR TCS RACING/logo.png';
-import jaguarCar from '../../../public/img/JAGUAR TCS RACING/carro.png';
+import jaguarLogo from '../../../public/img/Formula-E/JAGUAR TCS RACING/logo.png';
+import jaguarCar from '../../../public/img/Formula-E/JAGUAR TCS RACING/carro.png';
 
-import mahindraLogo from '../../../public/img/mahindra/logo-mahindra.png';
-import mahindraCar from '../../../public/img/mahindra/carro.png';
+import mahindraLogo from '../../../public/img/Formula-E/mahindra/logo-mahindra.png';
+import mahindraCar from '../../../public/img/Formula-E/mahindra/carro.png';
 
-import maseratiLogo from '../../../public/img/MASERATI MSG RACING/logo.jpg';
-import maseratiCar from '../../../public/img/MASERATI MSG RACING/carro.png';
+import maseratiLogo from '../../../public/img/Formula-E/MASERATI MSG RACING/logo.jpg';
+import maseratiCar from '../../../public/img/Formula-E/MASERATI MSG RACING/carro.png';
 
-import mclarenLogo from '../../../public/img/NEOM MCLAREN FORMULA E TEAM/logo.png';
-import mclarenCar from '../../../public/img/NEOM MCLAREN FORMULA E TEAM/carro.png';
+import mclarenLogo from '../../../public/img/Formula-E/NEOM MCLAREN FORMULA E TEAM/logo.png';
+import mclarenCar from '../../../public/img/Formula-E/NEOM MCLAREN FORMULA E TEAM/carro.png';
 
-import nissanLogo from '../../../public/img/NISSAN FORMULA E TEAM/logo.png';
-import nissanCar from '../../../public/img/NISSAN FORMULA E TEAM/carro.png';
+import nissanLogo from '../../../public/img/Formula-E/NISSAN FORMULA E TEAM/logo.png';
+import nissanCar from '../../../public/img/Formula-E/NISSAN FORMULA E TEAM/carro.png';
 
-import porscheLogo from '../../../public/img/TAG HEUER PORSCHE FORMULA E TEAM/logo.png';
-import porscheCar from '../../../public/img/TAG HEUER PORSCHE FORMULA E TEAM/carro.png';
+import porscheLogo from '../../../public/img/Formula-E/TAG HEUER PORSCHE FORMULA E TEAM/logo.png';
+import porscheCar from '../../../public/img/Formula-E/TAG HEUER PORSCHE FORMULA E TEAM/carro.png';
 
 // Componente Card
 const Card = ({ victories, podiums, races, teamName, teamLogo, carImage, link }) => {
@@ -140,7 +140,7 @@ const Cards = () => {
       teamName: 'Mahindra Racing',
       teamLogo: mahindraLogo,
       carImage: mahindraCar,
-      link: '/equipes/mahindra' // Adicione a URL correspondente
+      link: '/formula-e/equipes/mahindra' // Adicione a URL correspondente
     },
     {
       victories: 10,

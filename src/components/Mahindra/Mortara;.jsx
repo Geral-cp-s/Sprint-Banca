@@ -16,7 +16,7 @@ function EdoardoMortara() {
   return (
     <>
       <DriverCard onClick={openModal}>
-        <DriverImage src="/img/mahindra/edoardo.png" alt="Edoardo Mortara" />
+        <DriverImage src="/img/Formula-E/mahindra/edoardo.png" alt="Edoardo Mortara" />
         <DriverName>Edoardo Mortara</DriverName>
         <DriverNumber>48</DriverNumber>
         <p>
@@ -33,7 +33,7 @@ function EdoardoMortara() {
               &times;
             </span>
             <h2 style={modalTitleStyles}>Edoardo Mortara</h2>
-            <img src="../../../img/mahindra/edoardo.png" alt="Edoardo Mortara" style={modalImageStyles} />
+            <img src="../../../img/Formula-E/mahindra/edoardo.png" alt="Edoardo Mortara" style={modalImageStyles} />
             <h3 style={legendaStyles}>Estatísticas da temporada</h3>
             <div style={statsContainerStyles}>
               <div style={statItemStyles}>

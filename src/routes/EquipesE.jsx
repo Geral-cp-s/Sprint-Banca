@@ -1,4 +1,4 @@
-import Cards from '../components/Equipes/Cards'; // Importando o componente Cards
+import Cards from '../components/Equipes-FormulaE/Cards'; // Importando o componente Cards
 import styled from 'styled-components';
 
 

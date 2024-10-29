@@ -17,7 +17,7 @@ function DeVries() {
     <>
       <ResponsiveModalStyles />
       <DriverCard onClick={openModal}>
-        <DriverImage src="/img/mahindra/nyckdevries.png" alt="Nick de Vries" />
+        <DriverImage src="/img/Formula-E/mahindra/nyckdevries.png" alt="Nick de Vries" />
         <DriverName>Nick de Vries</DriverName>
         <DriverNumber>21</DriverNumber>
         <p>
@@ -33,7 +33,7 @@ function DeVries() {
               &times;
             </span>
             <h2 style={modalTitleStyles}>Nick de Vries</h2>
-            <img src="/img/mahindra/nyckdevries.png" alt="Nick de Vries" style={modalImageStyles} />
+            <img src="/img/Formula-E/mahindra/nyckdevries.png" alt="Nick de Vries" style={modalImageStyles} />
             <h3 style={legendaStyles}>Estatísticas da temporada</h3>
             <div style={statsContainerStyles}>
               <div style={statItemStyles}>
