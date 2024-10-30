@@ -22,22 +22,53 @@ const ChatBot = () => {
                 { text: userMessage, sender: "user" },
             ];
             setMessages(newMessages);
+            console.log("Mensagem do usuário enviada:", userMessage); // Log da mensagem enviada
             setUserMessage("");
-            handleBotResponse(); // Chama a função para simular a resposta do bot
+            await handleBotResponse(userMessage);
         }
     };
 
-    const handleBotResponse = () => {
+    const handleBotResponse = async (userMessage) => {
         setIsLoading(true); // Começa o carregamento
 
-        // Simula o tempo de espera para a resposta do bot
-        setTimeout(() => {
+        try {
+            console.log("Consultando API..."); // Log antes de fazer a chamada à API
+            
+            const response = await axios.post(
+                'https://api-inference.huggingface.co/models/gpt2',
+                {
+                    inputs: userMessage,
+                    options: { use_cache: false } // Adicionei uma opção para não usar cache
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer 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`, // Sua chave
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+
+            console.log("Resposta da API:", response.data); // Log da resposta da API
+
+            // Certifique-se de que a resposta esteja na estrutura correta
+            const botReply = response.data[0]?.generated_text || "Desculpe, não consegui entender."; 
             setMessages((prevMessages) => [
                 ...prevMessages,
-                { text: "Essa é uma resposta automática.", sender: "bot" }, // Resposta do bot
+                { text: botReply, sender: "bot" },
             ]);
+        } catch (error) {
+            // Log de erro aprimorado
+            const errorMessage = error.response
+                ? error.response.data
+                : error.message;
+            console.error("Erro ao comunicar com a API:", errorMessage);
+            setMessages((prevMessages) => [
+                ...prevMessages,
+                { text: "Desculpe, ocorreu um erro ao processar sua mensagem.", sender: "bot" },
+            ]);
+        } finally {
             setIsLoading(false); // Para o carregamento
-        }, 2000); // Tempo em milissegundos (2 segundos)
+        }
     };
 
     return (
@@ -83,7 +114,7 @@ const ChatBot = () => {
 
 export default ChatBot;
 
-// Estilos do Chat
+// Estilos do Chat (permanece o mesmo)
 const ChatContainer = styled.div`
   position: fixed;
   bottom: 10px;
