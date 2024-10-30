@@ -16,7 +16,7 @@ export const HeaderMenu = styled.nav`
 
   /* Logo */
   .nav__logo img {
-    height: 90px;
+    height: 140px;
     transform: scale(1.2);
     transition: transform 0.3s ease;
   }

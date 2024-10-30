@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { HeaderMenu } from './styledHeader';
 import { Link, useLocation } from 'react-router-dom';
+import { HeaderMenu } from './styledHeader';
 
 const Header = () => {
   const location = useLocation();
@@ -34,7 +34,7 @@ const Header = () => {
         <nav className="nav-container">
           <div className="nav__data">
             <Link to="/quem-somos" className="nav__logo">
-              <img src="/img/G4_Tech-branco.png" alt="Logo" />
+              <img src="/img/logo2.png" alt="Logo" />
             </Link>
 
             <div className="nav__toggle" onClick={toggleMenu} id="nav-toggle">
@@ -51,11 +51,11 @@ const Header = () => {
               <li><Link to="/" className="nav__link" onClick={() => setMenuOpen(false)}>Home</Link></li>
               <li className="dropdown__item">
                 <div className="nav__link">
-                Formula Truck <i className="ri-arrow-down-s-line dropdown__arrow"></i>
+                  Formula Truck <i className="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
                 <ul className="dropdown__menu">
-                <li><Link to="/formula-truck/pilotos" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas os pilotos</Link></li>
-                <li><Link to="/formula-truck/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
+                  <li><Link to="/formula-truck/pilotos" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas os pilotos</Link></li>
+                  <li><Link to="/formula-truck/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
                 </ul>
               </li>
 
@@ -72,12 +72,12 @@ const Header = () => {
 
               <li className="dropdown__item">
                 <div className="nav__link">
-                Stock Car <i className="ri-arrow-down-s-line dropdown__arrow"></i>
+                  Stock Car <i className="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
                 <ul className="dropdown__menu">
                   <li><Link to="/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
                   <li><Link to="/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
-                  
+
                 </ul>
               </li>
 
