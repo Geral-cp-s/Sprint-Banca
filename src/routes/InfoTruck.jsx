@@ -1,6 +1,7 @@
 // src/components/InfoTruck/InfoTruck.js
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 import truckImage from '../../public/img/formula-truck/truck.png';
 import newsImage1 from '../../public/img/formula-truck/news1.webp';
 import newsImage2 from '../../public/img/formula-truck/news2.webp';
@@ -19,6 +20,10 @@ const InfoTruck = () => {
         <p>
         A Fórmula Truck é uma competição única no automobilismo, com caminhões de até 1.200 cavalos de potência desafiando circuitos a mais de 200 km/h. Essa categoria exige precisão e controle dos pilotos, que enfrentam curvas e disputas intensas, proporcionando um espetáculo de ultrapassagens ousadas e aceleração impressionante. Com o som potente dos motores e a atmosfera vibrante dos fãs, a Fórmula Truck se destaca pela emoção e pela força dos caminhões em cada corrida.
         </p>
+        <LinksContainer>
+          <Acesso><Link to="/formula-truck/pilotos">Acessar os pilotos</Link></Acesso>
+          <Acesso><Link to="/formula-truck/pistas">Acessar o calendario</Link></Acesso>
+        </LinksContainer>
       </CategoryInfo>
       <ClassificationTable>
         <h2>Classificação Atual</h2>
@@ -416,5 +421,23 @@ const NewsImage = styled.img`
   object-fit: cover;
   border-radius: 8px 8px 0 0;
 `;
+
+const LinksContainer = styled.div`
+  margin-top: 15px;
+`;
+
+const Acesso = styled.a`
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-right: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 
 export default InfoTruck;

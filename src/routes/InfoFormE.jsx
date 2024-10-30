@@ -1,6 +1,7 @@
 // src/components/InfoTruck/InfoTruck.js
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 import carImage from '../../public/img/formula-e/carro.png';
 import newsImage1 from '../../public/img/noticia/img1.webp';
 import newsImage2 from '../../public/img/noticia/img2.webp';
@@ -19,6 +20,10 @@ const InfoFormE = () => {
         <p>
         A Fórmula E é uma emocionante categoria do automobilismo que destaca veículos elétricos competindo em circuitos urbanos ao redor do mundo. Com carros que atingem velocidades de até 280 km/h e potência de 340 cavalos, a competição combina tecnologia de ponta e sustentabilidade. Os pilotos enfrentam desafios em pistas que serpenteiam pelas cidades, proporcionando um espetáculo de estratégia e ultrapassagens audaciosas. A atmosfera vibrante dos fãs e o som impressionante dos motores elétricos tornam a Fórmula E uma experiência única, onde emoção e compromisso ambiental se encontram.
         </p>
+        <LinksContainer>
+          <Acesso><Link to="/formula-e/equipes">Acessar as equipes</Link></Acesso>
+          <Acesso><Link to="/formula-e/pistas">Acessar o calendario</Link></Acesso>
+        </LinksContainer>
       </CategoryInfo>
       <ClassificationTable>
         <h2>Classificação Atual</h2>
@@ -373,6 +378,23 @@ const NewsImage = styled.img`
   height: 150px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
+`;
+
+const LinksContainer = styled.div`
+  margin-top: 15px;
+`;
+
+const Acesso = styled.a`
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-right: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 

@@ -49,6 +49,7 @@ const Header = () => {
           <div ref={menuRef} className={`nav__menu ${menuOpen ? 'show-menu' : ''}`} id="nav-menu">
             <ul className="nav__list">
               <li><Link to="/" className="nav__link" onClick={() => setMenuOpen(false)}>Home</Link></li>
+              <li><Link to="/minigames" className="nav__link" onClick={() => setMenuOpen(false)}>Jogos</Link></li>
               <li className="dropdown__item">
                 <div className="nav__link">
                   Formula Truck <i className="ri-arrow-down-s-line dropdown__arrow"></i>
@@ -62,18 +63,6 @@ const Header = () => {
 
               <li className="dropdown__item">
                 <div className="nav__link">
-                  Fórmula-E <i className="ri-arrow-down-s-line dropdown__arrow"></i>
-                </div>
-                <ul className="dropdown__menu">
-                  <li><Link to="/formula-e/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
-                  <li><Link to="/formula-e/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
-                  <li><Link to="/formula-e/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mais Informações</Link></li>
-                  <li><Link to="/minigames" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mini-Jogos</Link></li>
-                </ul>
-              </li>
-
-              <li className="dropdown__item">
-                <div className="nav__link">
                   Stock Car <i className="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
                 <ul className="dropdown__menu">
@@ -82,6 +71,7 @@ const Header = () => {
 
                 </ul>
               </li>
+              <li><Link to="/categorias" className="nav__link" onClick={() => setMenuOpen(false)}>Categorias</Link></li>
 
               <li className="dropdown__item">
                 <div className="nav__link">
