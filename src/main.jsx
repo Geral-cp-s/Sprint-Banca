@@ -22,6 +22,7 @@ import MiniGames from './routes/MiniGames.jsx'
 import Desenho from './routes/Desenho.jsx'
 import EquipesTruck from './routes/EquipesTruck.jsx'
 import PistasTruck from './routes/PistasTruck.jsx'
+import InfoTruck from './routes/InfoTruck.jsx'
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,7 @@ const router = createBrowserRouter([
       {path:'/corrida', element:<Corrida/>},
       {path:'/minigames', element:<MiniGames/>},
       {path:'/desenho', element:<Desenho/>},
+      {path:'/formula-truck/mais-informacoes', element:<InfoTruck/>},
 
       //Chamando as equipes
       {path:'/formula-e/equipes/mahindra', element:<Mahindra/>}

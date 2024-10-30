@@ -56,6 +56,7 @@ const Header = () => {
                 <ul className="dropdown__menu">
                   <li><Link to="/formula-truck/pilotos" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas os pilotos</Link></li>
                   <li><Link to="/formula-truck/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
+                  <li><Link to="/formula-truck/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mais Informações</Link></li>
                 </ul>
               </li>
 
