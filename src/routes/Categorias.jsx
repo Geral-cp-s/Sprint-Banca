@@ -11,6 +11,7 @@ import truckImg from '../../public/img/formula-truck/banner.jpg';
 import enduranceImg from '../../public/img/endurence/banner.jpg';
 import kartImg from '../../public/img/kart/banner.png';
 import rallyImg from '../../public/img/rally/banner.jpg';
+import f4Img from '../../public/img/formula-4/banner.jpg';
 
 // Estilização dos componentes
 const Container = styled.div`
@@ -107,6 +108,13 @@ const categorias = [
     nome: 'Rally dos Sertões',
     descricao: 'O Rally dos Sertões é uma famosa competição off-road brasileira com percursos desafiadores.',
     imagem: rallyImg,
+    link: '/rally-sertoes/mais-informacoes',
+  },
+  {
+    id: 8,
+    nome: 'Fórmula 4 Brasil',
+    descricao: 'A Fórmula 4 Brasil é uma categoria de automobilismo de jovens pilotos.',
+    imagem:f4Img,
     link: '#',
   },
 ];
