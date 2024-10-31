@@ -3,7 +3,12 @@ import styled from 'styled-components';
 
 const ContentContainer = styled.div`
   display: flex;
+  flex-direction: column; /* Muda para coluna em telas menores */
   padding: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row; /* Retorna para linha em telas maiores */
+  }
 `;
 
 const CarouselContainer = styled.div`
@@ -13,7 +18,7 @@ const CarouselContainer = styled.div`
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
-  height: 500px; /* Aumentei a altura do carrossel para 500px */
+  height: 500px;
 
   h1 {
     font-size: 36px;
@@ -28,7 +33,7 @@ const CarouselContainer = styled.div`
 const ProductList = styled.div`
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: calc(100% * 2); /* Definido para mostrar 2 produtos por slide */
+  width: calc(100% * 2);
 `;
 
 const ProductCard = styled.div`
@@ -41,24 +46,23 @@ const ProductCard = styled.div`
   flex: 1 0 calc(50% - 10px); /* 2 produtos por slide */
   color: #fff;
   display: flex;
-  flex-direction: column; /* Para empilhar imagem e informações */
-  align-items: center; /* Centralizar o conteúdo */
-  
-  min-height: 400px; /* Aumentei a altura mínima do cartão para 400px */
-  overflow: hidden; /* Para evitar que o conteúdo extravase */
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  overflow: hidden;
 
   @media (max-width: 768px) {
-    flex: 1 0 calc(100% - 10px);
+    flex: 1 0 calc(100% - 10px); /* 1 produto por slide em telas menores */
   }
 `;
 
 const ProductImage = styled.img`
-  width: 100%; /* A imagem ocupa toda a largura do cartão */
-  height: auto; /* Ajusta a altura para manter a proporção */
-  max-height: 300px; /* Aumentei a altura máxima da imagem para 300px */
-  object-fit: cover; /* Corta a imagem para preencher sem distorcer */
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+  margin-bottom: 10px;
 `;
 
 const ProductInfo = styled.div`
@@ -68,13 +72,13 @@ const ProductInfo = styled.div`
   h3 {
     font-size: 1.1rem;
     color: #fff;
-    margin: 5px 0; /* Adicione margem para espaçamento */
+    margin: 5px 0;
   }
 
   p {
     font-size: 1rem;
     color: #fff;
-    margin: 0; /* Remove margem para melhor alinhamento */
+    margin: 0;
   }
 `;
 
@@ -88,6 +92,11 @@ const Banner = styled.div`
   min-height: 250px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
+
+  .imgban{
+    width: 100%;
+    height: 100%;
+  }
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -125,6 +134,9 @@ const Button = styled.button`
   &:hover {
     background-color: #00c3ff;
   }
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
+  }
 `;
 
 const Arrow = styled.div`
@@ -150,7 +162,12 @@ const Sidebar = styled.div`
   background-color: #f1f1f1;
   padding: 20px;
   border-radius: 8px;
-  margin-right: 20px; /* Espaço entre a sidebar e o conteúdo principal */
+  margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-right: 0; /* Remove a margem em telas menores */
+    width: 100%; /* A sidebar ocupa 100% da largura */
+  }
 `;
 
 const FilterSection = styled.div`
@@ -172,11 +189,9 @@ const Dropdown = styled.select`
   margin-bottom: 15px;
 `;
 
-
-
 const NewSection = styled.div`
   margin: 20px 0;
-  h2{
+  h2 {
     font-size: 36px;
     color: black;
     margin: 0 0 20px;
@@ -203,6 +218,10 @@ const NewProductCard = styled.div`
   min-width: 180px;
   max-width: 220px;
   height: 300px;
+
+  @media (max-width: 768px) {
+    flex: 1 0 calc(100% - 20px); /* 1 produto por linha em telas pequenas */
+  }
 
   img {
     width: 100%;
@@ -240,7 +259,6 @@ const NewProductCard = styled.div`
   }
 `;
 
-// Estilos da seção de desconto
 const Desconto = styled.div`
   display: flex;
   flex-direction: column;
@@ -310,10 +328,9 @@ const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 90%; /* Ajustar a largura em telas menores */
   }
 `;
-
 const MainContent = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [filters, setFilters] = useState({
@@ -407,7 +424,7 @@ const MainContent = () => {
             <p>50% de desconto na linha oficial da Fórmula E e da FIA</p>
             <Button>Compre Agora</Button>
           </BannerContent>
-          <img src="/img/Racing.png" alt="" />
+          <img className='imgban' src="/img/Racing.png" alt="" />
         </Banner>
 
         <h1 style={{ textAlign: 'center', marginBottom: '20px', fontFamily: 'Audiowide, sans-serif' }}>
