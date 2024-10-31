@@ -3,12 +3,11 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 import carImage from '../../public/img/stock/carro.png';
-import newsImage1 from '../../public/img/noticia/img1.webp';
-import newsImage2 from '../../public/img/noticia/img2.webp';
-import newsImage3 from '../../public/img/noticia/img3.webp';
-import newsImage4 from '../../public/img/noticia/img4.webp';
-import newsImage5 from '../../public/img/noticia/img5.webp';
-import newsImage6 from '../../public/img/noticia/img6.webp';
+import newsImage1 from '../../public/img/stock/news1.jpg';
+import newsImage2 from '../../public/img/stock/news2.jpg';
+import newsImage3 from '../../public/img/stock/news3.jpg';
+import newsImage4 from '../../public/img/stock/news4.jpg';
+
 
 
 const InfoStock = () => {
@@ -233,34 +232,25 @@ const InfoStock = () => {
         <NewsGrid>
           <NewsCard>
             <NewsImage src={newsImage1} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Pascal Wehrlein, da Porsche, supera adversidades e conquista o Campeonato Mundial de Fórmula E em Londres</h3>
-            <p>Wehrlein garantiu a vitória após uma temporada cheia de desafios, consolidando seu lugar entre os melhores da categoria elétrica.</p>
+            <h3>Triunfo em El Pinar põe Felipe Fraga no top-10 de vencedores na Stock Car</h3>
+            <p>Depois de pouco mais de dois anos, Felipe Fraga voltou a vencer na Stock Car Pro Series. </p>
           </NewsCard>
           <NewsCard>
             <NewsImage src={newsImage2} alt="Notícia sobre a Fórmula Truck" />
-            <h3>A parceria juntará o piloto mais experiente da Fórmula E com o único novato até agora, destacando o compromisso da Lola em desenvolver novos talentos e tecnologias no automobilismo.</h3>
-            <p>Lola Yamaha ABT completa a formação de pilotos estreantes com o novato Zane Maloney se juntando ao “Sr. Fórmula E” Lucas di Grassi.</p>
+            <h3>Muggiati supera erro e repete maior escalada da etapa em El Pinar</h3>
+            <p>A temporada de estreia de Zezinho Muggiati vai sendo escrita com capítulos bem interessantes.</p>
           </NewsCard>
           <NewsCard>
             <NewsImage src={newsImage3} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Fórmula E definida para a Semana do Clima de Nova York</h3>
-            <p>Líder em esporte global sustentável, a Fórmula E estará presente na Semana do Clima de Nova York, com a vice-presidente de Sustentabilidade, Julia Palle, programada para falar em diversos eventos.</p>
+            <h3>Com duplo top-5, Suzuki é um dos maiores pontuadores no Uruguai</h3>
+            <p>Rafael Suzuki garantiu um duplo top-5 no fim de semana de estreia da Stock Car no Uruguai, onde foi realizada a 10ª etapa do campeonato, concluindo um mês que teve duas disputas internacionais na categoria.</p>
           </NewsCard>
           <NewsCard>
             <NewsImage src={newsImage4} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Buemi e Frijns retornam com a Envision Racing para a 11ª temporada</h3>
-            <p>A Envision Racing tem o prazer de confirmar uma escalação de pilotos inalterada para a Temporada 11 do Campeonato Mundial de Fórmula E da ABB FIA. Sébastien Buemi e Robin Frijns continuarão com a equipe para a Temporada 11 do Campeonato Mundial de Fórmula E da ABB FIA.</p>
+            <h3>Felipe Massa mantém liderança da Stock Car após etapa do Uruguai</h3>
+            <p>Felipe Massa saiu da etapa histórica do Uruguai, a primeira da Stock Car no país vizinho, ainda como líder do campeonato.</p>
           </NewsCard>
-          <NewsCard>
-            <NewsImage src={newsImage5} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Fórmula E abre inscrições para o Fundo Better Futures da Temporada 11</h3>
-            <p>A Fórmula E lançou hoje o processo de inscrição para seu principal programa de apoio beneficente, o Better Futures Fund, que fornecerá suporte direto a projetos de impacto local e causas em todos os locais de corrida na 11ª temporada.</p>
-          </NewsCard>
-          <NewsCard>
-            <NewsImage src={newsImage6} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Lucas di Grassi: “10 anos de trabalho duro e noites sem dormir”</h3>
-            <p>Dez anos atrás, hoje: Lucas di Grassi venceu o primeiro E-Prix para a ABT em Pequim. Desde então, a Fórmula E cresceu de força em força.</p>
-          </NewsCard>
+          
           {/* Adicione mais cards conforme necessário */}
         </NewsGrid>
       </NewsSection>
