@@ -385,13 +385,11 @@ const MainContent = () => {
 
   ];
 
-  // Função para filtrar os produtos com base nos filtros selecionados
   const filteredNewProducts = newProducts.filter(product => {
     const categoryMatch = filters.category ? product.category.toLowerCase() === filters.category.toLowerCase() : true;
     const modalityMatch = filters.type ? product.modality.toLowerCase() === filters.type.toLowerCase() : true;
     return categoryMatch && modalityMatch;
   });
-
 
   const itemsPerSlide = 3;
   const totalSlides = Math.ceil(products.length / itemsPerSlide);
@@ -404,6 +402,8 @@ const MainContent = () => {
     setCurrentSlide((prev) => (prev === 1 ? totalSlides : prev - 1));
   };
 
+  const hasFilters = filters.category || filters.type; // Verifica se há filtros ativos
+
   return (
     <ContentContainer>
       <Sidebar>
@@ -414,7 +414,7 @@ const MainContent = () => {
             <option value="bone">Bonés</option>
             <option value="camisetas">Camisetas</option>
             <option value="jaquetas">Jaquetas</option>
-            <option value="acessorios">acessorios</option>  {/* Certifique-se que isso esteja em minúsculas */}
+            <option value="acessorios">acessorios</option>
           </Dropdown>
         </FilterSection>
         <FilterSection>
@@ -428,34 +428,38 @@ const MainContent = () => {
         </FilterSection>
       </Sidebar>
 
-      <div style={{ flex: 1 }}> {/* Para o conteúdo principal */}
-        <Banner>
-          <BannerContent>
-            <h1>Venda de campeonato</h1>
-            <p>50% de desconto na linha oficial da Fórmula E e da FIA</p>
-            <Button>Compre Agora</Button>
-          </BannerContent>
-          <img className='imgban' src="/img/Racing.png" alt="" />
-        </Banner>
+      <div style={{ flex: 1 }}>
+        {!hasFilters && ( // Renderiza o banner e o carrossel apenas se não houver filtros
+          <>
+            <Banner>
+              <BannerContent>
+                <h1>Venda de campeonato</h1>
+                <p>50% de desconto na linha oficial da Fórmula E e da FIA</p>
+                <Button>Compre Agora</Button>
+              </BannerContent>
+              <img className='imgban' src="/img/Racing.png" alt="" />
+            </Banner>
 
-        <h1 style={{ textAlign: 'center', marginBottom: '20px', fontFamily: 'Audiowide, sans-serif' }}>
-          Produtos em Destaque
-        </h1>
-        <CarouselContainer>
-          <Arrow onClick={prevSlide}>&#8249;</Arrow>
-          <ProductList style={{ transform: `translateX(-${((currentSlide - 1) * 100) / itemsPerSlide}%)` }}>
-            {products.map((product) => (
-              <ProductCard key={product.id}>
-                <ProductImage src={product.img} alt={product.name} />
-                <ProductInfo>
-                  <h3>{product.name}</h3>
-                  <p>{product.price}</p>
-                </ProductInfo>
-              </ProductCard>
-            ))}
-          </ProductList>
-          <Arrow onClick={nextSlide}>&#8250;</Arrow>
-        </CarouselContainer>
+            <h1 style={{ textAlign: 'center', marginBottom: '20px', fontFamily: 'Audiowide, sans-serif' }}>
+              Produtos em Destaque
+            </h1>
+            <CarouselContainer>
+              <Arrow onClick={prevSlide}>&#8249;</Arrow>
+              <ProductList style={{ transform: `translateX(-${((currentSlide - 1) * 100) / itemsPerSlide}%)` }}>
+                {products.map((product) => (
+                  <ProductCard key={product.id}>
+                    <ProductImage src={product.img} alt={product.name} />
+                    <ProductInfo>
+                      <h3>{product.name}</h3>
+                      <p>{product.price}</p>
+                    </ProductInfo>
+                  </ProductCard>
+                ))}
+              </ProductList>
+              <Arrow onClick={nextSlide}>&#8250;</Arrow>
+            </CarouselContainer>
+          </>
+        )}
 
         <NewSection>
           <h2>Novo em nosso estoque!</h2>
@@ -472,7 +476,6 @@ const MainContent = () => {
             ))}
           </ProductGrid>
         </NewSection>
-
 
         <Desconto>
           <h1>Equipes em destaque</h1>
