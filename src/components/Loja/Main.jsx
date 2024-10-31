@@ -193,10 +193,9 @@ const ProductGrid = styled.div`
 `;
 
 const NewProductCard = styled.div`
-  background-color: #fff;
-  border: 2px solid var(--black-color-light);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--black-color-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 15px;
   margin: 10px;
   text-align: center;
@@ -207,7 +206,8 @@ const NewProductCard = styled.div`
 
   img {
     width: 100%;
-    height: 180px;
+    height: auto;
+    max-height: 180px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -215,16 +215,29 @@ const NewProductCard = styled.div`
 
   h3 {
     font-size: 18px;
-    color: #0077ff;
+    color: #fff;
     margin: 10px 0;
   }
 
-  p {
+  .discount {
     font-size: 16px;
-    color: #333;
+    color: #ff4d4d;
+    text-decoration: line-through;
+    margin-bottom: 5px;
   }
 
-  
+  .price {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 25px; 
+  }
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 // Estilos da seção de desconto
@@ -322,26 +335,26 @@ const MainContent = () => {
 
   const newProducts = [
     // Bonés
-    { id: 10, img: 'public/img/loja/boneFE.png', name: 'Boné Coleção Motorsport', price: 'R$200,00', category: 'Bonés', modality: 'Fórmula E' },
-    { id: 11, img: 'public/img/loja/boneSC.png', name: 'Boné Estilo Stock Car', price: 'R$180,00', category: 'Bonés', modality: 'Stock Car' },
-    { id: 12, img: 'public/img/loja/image.png', name: 'Boné Fórmula Truck', price: 'R$150,00', category: 'Bonés', modality: 'Fórmula Truck' },
+    { id: 10, img: 'public/img/loja/boneFE.png', name: 'Boné Motorsport', price: 'R$200,00', discountPrice: 'R$229,90', category: 'Bonés', modality: 'Fórmula E' },
+    { id: 11, img: 'public/img/loja/boneSC.png', name: 'Boné Estilo Stock Car', price: 'R$180,00', discountPrice: 'R$220,00', category: 'Bonés', modality: 'Stock Car' },
+    { id: 12, img: 'public/img/loja/image.png', name: 'Boné Fórmula Truck', price: 'R$150,00', discountPrice: 'R$180,00', category: 'Bonés', modality: 'Fórmula Truck' },
 
     // Camisetas
-    { id: 13, img: 'public/img/loja/CAMISafe.png', name: 'Camiseta Fórmula E', price: 'R$200,00', category: 'Camisetas', modality: 'Fórmula E' },
-    { id: 14, img: 'public/img/loja/CAMISAft.png', name: 'Camiseta Fórmula Truck', price: 'R$180,00', category: 'Camisetas', modality: 'Fórmula Truck' },
-    { id: 15, img: 'public/img/loja/camisaSC.png', name: 'Camiseta Stock Car', price: 'R$160,00', category: 'Camisetas', modality: 'Stock Car' },
+    { id: 13, img: 'public/img/loja/CAMISafe.png', name: 'Camiseta Fórmula E', price: 'R$200,00', discountPrice: 'R$229,90', category: 'Camisetas', modality: 'Fórmula E' },
+    { id: 14, img: 'public/img/loja/CAMISAft.png', name: 'Camiseta Fórmula Truck', price: 'R$180,00', discountPrice: 'R$229,90', category: 'Camisetas', modality: 'Fórmula Truck' },
+    { id: 15, img: 'public/img/loja/camisaSC.png', name: 'Camiseta Stock Car', price: 'R$160,00', discountPrice: 'R$229,90', category: 'Camisetas', modality: 'Stock Car' },
 
     // Acessórios
-    { id: 16, img: 'public/img/loja/canecaFE.png', name: 'Caneca Fórmula E', price: 'R$45,00', category: 'Acessórios', modality: 'Fórmula E' },
-    { id: 17, img: 'public/img/loja/chaveiroFT.png', name: 'Chaveiro Luxo Fórmula Truck', price: 'R$75,00', category: 'Acessórios', modality: 'Fórmula Truck' },
-    { id: 18, img: 'public/img/loja/almofadaSC.webp', name: 'Almofada Stock Car', price: 'R$90,00', category: 'Acessórios', modality: 'Stock Car' },
+    { id: 16, img: 'public/img/loja/canecaFE.png', name: 'Caneca Fórmula E', price: 'R$45,00', discountPrice: 'R$69,90', category: 'Acessórios', modality: 'Fórmula E' },
+    { id: 17, img: 'public/img/loja/chaveiroFT.png', name: 'Chaveiro Truck', price: 'R$75,00', discountPrice: 'R$89,90', category: 'Acessórios', modality: 'Fórmula Truck' },
+    { id: 18, img: 'public/img/loja/almofadaSC.webp', name: 'Almofada Stock Car', price: 'R$90,00', discountPrice: 'R$129,90', category: 'Acessórios', modality: 'Stock Car' },
 
     // Casacos
-    { id: 19, img: 'public/img/loja/casacoFE.png', name: 'Casaco Fórmula E', price: 'R$300,00', category: 'Casacos', modality: 'Fórmula E' },
-    { id: 20, img: 'public/img/loja/casacoFT.png', name: 'Casaco Fórmula Truck', price: 'R$280,00', category: 'Casacos', modality: 'Fórmula Truck' },
-    { id: 21, img: 'public/img/loja/casacoSC.png', name: 'Casaco Stock Car', price: 'R$290,00', category: 'Casacos', modality: 'Stock Car' },
+    { id: 19, img: 'public/img/loja/casacoFE.png', name: 'Casaco Fórmula E', price: 'R$300,00', discountPrice: 'R$359,90', category: 'Casacos', modality: 'Fórmula E' },
+    { id: 20, img: 'public/img/loja/casacoFT.png', name: 'Casaco Fórmula Truck', price: 'R$280,00', discountPrice: 'R$299,90', category: 'Casacos', modality: 'Fórmula Truck' },
+    { id: 21, img: 'public/img/loja/casacoSC.png', name: 'Casaco Stock Car', price: 'R$290,00', discountPrice: 'R$329,90', category: 'Casacos', modality: 'Stock Car' },
 
-    
+
   ];
 
   // Função para filtrar os produtos com base nos filtros selecionados
@@ -350,7 +363,6 @@ const MainContent = () => {
     const modalityMatch = filters.type ? product.modality.toLowerCase() === filters.type.toLowerCase() : true;
     return categoryMatch && modalityMatch;
   });
-
 
 
   const itemsPerSlide = 3;
@@ -371,10 +383,10 @@ const MainContent = () => {
           <FilterTitle>Filtrar por Categoria</FilterTitle>
           <Dropdown onChange={(e) => setFilters({ ...filters, category: e.target.value })}>
             <option value="">Tudo</option>
-            <option value="bone">Bonés</option>  {/* Aqui está o valor correto em minúsculas */}
+            <option value="bone">Bonés</option>
             <option value="camisetas">Camisetas</option>
             <option value="jaquetas">Jaquetas</option>
-            <option value="acessorios">Acessórios</option>  {/* Aqui está o valor correto em minúsculas */}
+            <option value="acessorios">acessorios</option>  {/* Certifique-se que isso esteja em minúsculas */}
           </Dropdown>
         </FilterSection>
         <FilterSection>
@@ -424,11 +436,15 @@ const MainContent = () => {
               <NewProductCard key={product.id}>
                 <img src={product.img} alt={product.name} />
                 <h3>{product.name}</h3>
-                <p>{product.price}</p>
+                {product.discountPrice && (
+                  <div className="discount">{product.discountPrice}</div>
+                )}
+                <div className="price">{product.price}</div>
               </NewProductCard>
             ))}
           </ProductGrid>
         </NewSection>
+
 
         <Desconto>
           <h1>Equipes em destaque</h1>
