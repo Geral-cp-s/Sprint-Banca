@@ -130,17 +130,22 @@ const BannerContent = styled.div`
     font-size: 24px;
     margin-bottom: 10px;
     font-family: "Audiowide", sans-serif;
+    margin-right: 15px;
+    margin-top: 15px;
   }
 
   p {
     font-size: 16px;
     margin-bottom: 20px;
     color: #e0e0e0;
+    margin-right: 15px;
+    margin-top: 15px;
+    
   }
 `;
 
 const Button = styled.button`
-  background-color: blue;
+  background-color: red;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -148,10 +153,14 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  margin-right: 19px;
+  margin-top: 15px;
 
   &:hover {
-    background-color: #00c3ff;
+    background-color: #ff3d00;
+    text-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61, 0 0 15px #ff6f61;
   }
+  
   @media (max-width: 768px) {
     margin-bottom: 25px;
   }
