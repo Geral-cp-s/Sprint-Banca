@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
-import carImage from '../../public/img/formula-e/carro.png';
+import carImage from '../../public/img/stock/carro.png';
 import newsImage1 from '../../public/img/noticia/img1.webp';
 import newsImage2 from '../../public/img/noticia/img2.webp';
 import newsImage3 from '../../public/img/noticia/img3.webp';
@@ -18,7 +18,7 @@ const InfoStock = () => {
       <CategoryInfo>
         <h2>Sobre a Fórmula-E</h2>
         <p>
-        A Fórmula E é uma emocionante categoria do automobilismo que destaca veículos elétricos competindo em circuitos urbanos ao redor do mundo. Com carros que atingem velocidades de até 280 km/h e potência de 340 cavalos, a competição combina tecnologia de ponta e sustentabilidade. Os pilotos enfrentam desafios em pistas que serpenteiam pelas cidades, proporcionando um espetáculo de estratégia e ultrapassagens audaciosas. A atmosfera vibrante dos fãs e o som impressionante dos motores elétricos tornam a Fórmula E uma experiência única, onde emoção e compromisso ambiental se encontram.
+        A Stock Car Brasil, criada em 1979, é uma das principais categorias de automobilismo do país. Com carros inspirados em modelos populares, mas equipados com motores V8 potentes, a categoria garante corridas equilibradas e emocionantes graças à padronização dos veículos. O campeonato é realizado em diversas cidades brasileiras, incluindo a famosa "Corrida do Milhão". Nomes como Ingo Hoffmann, Cacá Bueno e Rubens Barrichello já passaram pela Stock Car, que também adota o etanol como combustível, destacando seu compromisso com a sustentabilidade.
         </p>
         <LinksContainer>
           <Acesso><Link to="/stock-car/equipes">Acessar as equipes</Link></Acesso>
@@ -40,171 +40,189 @@ const InfoStock = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Pascal Wehrlein</td>
-                <td>TAG Heuer Porsche</td>
-                <td>198</td>
+                <td>Felipe Massa</td>
+                <td>TMG Racing</td>
+                <td>770</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Mitch Evans</td>
-                <td>Jaguar TCS Racing</td>
-                <td>192</td>
+                <td>Gabriel Casagrande</td>
+                <td>Amattheis Vogel</td>
+                <td>759</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>Nick Cassidy</td>
-                <td>Jaguar TCS Racing</td>
-                <td>176</td>
+                <td>Felipe Baptista</td>
+                <td>Crown Sports</td>
+                <td>757</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>Oliver Rowland</td>
-                <td>Nissan Formula E Team</td>
-                <td>156</td>
+                <td>Ricardo Zonta</td>
+                <td>Team RC</td>
+                <td>736</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>Jean-Éric Vergne</td>
-                <td>DS Penske</td>
-                <td>139</td>
+                <td>Dudu Barrichello</td>
+                <td>Mobil Ale</td>
+                <td>727</td>
               </tr>
               <tr>
                 <td>6</td>
-                <td>António Félix da Costa</td>
-                <td>TAG Heuer Porsche</td>
-                <td>134</td>
+                <td>Julio Campos</td>
+                <td>Pole Motosports</td>
+                <td>710</td>
               </tr>
               <tr>
                 <td>7</td>
-                <td>Jake Dennis</td>
-                <td>Avalanche Andretti Formula E</td>
-                <td>122</td>
+                <td>Bruno Baptista</td>
+                <td>Team RC</td>
+                <td>708</td>
               </tr>
               <tr>
                 <td>8</td>
-                <td>Max Gunther</td>
-                <td>Maserati MSG Racing</td>
-                <td>73</td>
+                <td>Rafael Suzuki</td>
+                <td>TMG Racing</td>
+                <td>640</td>
               </tr>
               <tr>
                 <td>9</td>
-                <td>Robin Frijns</td>
-                <td>Envision Racing</td>
-                <td>66</td>
+                <td>Daniel Serra</td>
+                <td>Team RC</td>
+                <td>622</td>
               </tr>
               <tr>
                 <td>10</td>
-                <td>Stoffel Vandoorne</td>
-                <td>DS Penske</td>
-                <td>61</td>
+                <td>Enzo Elias</td>
+                <td>Crown Soports</td>
+                <td>611</td>
               </tr>
               <tr>
                 <td>11</td>
-                <td>Sébastien Buemi</td>
-                <td>Envision Racing</td>
-                <td>53</td>
+                <td>Rubens Barrichello</td>
+                <td>Mobil Ale</td>
+                <td>605</td>
               </tr>
               <tr>
                 <td>12</td>
-                <td>Nico Müller</td>
-                <td>ABT Formula E Team</td>
-                <td>52</td>
+                <td>Felipe Fraga</td>
+                <td>Blau Motosports</td>
+                <td>600</td>
               </tr>
               <tr>
                 <td>13</td>
-                <td>Sam Bird</td>
-                <td>Neom McLaren</td>
-                <td>48</td>
+                <td>Thiago Camilo</td>
+                <td>I Racing</td>
+                <td>563</td>
               </tr>
               <tr>
                 <td>14</td>
-                <td>Jake Hughes</td>
-                <td>Neom McLaren</td>
-                <td>48</td>
+                <td>Ricardo Maurício</td>
+                <td>Team RC</td>
+                <td>524</td>
               </tr>
               <tr>
                 <td>15</td>
-                <td>Norman Nato</td>
-                <td>Andretti Formula E Team</td>
-                <td>47</td>
+                <td>Artur Leist</td>
+                <td>Full T1me Sports</td>
+                <td>500</td>
               </tr>
               <tr>
                 <td>16</td>
-                <td>Edoardo Mortara</td>
-                <td>Mahindra Racing</td>
-                <td>29</td>
+                <td>Cesar Ramos</td>
+                <td>I Racing</td>
+                <td>491</td>
               </tr>
               <tr>
                 <td>17</td>
-                <td>Sach Fenestraz</td>
-                <td>Nissan Formula E Team</td>
-                <td>26</td>
+                <td>Lucas Foresti</td>
+                <td>Amattheis Vogel</td>
+                <td>490</td>
               </tr>
               <tr>
                 <td>18</td>
-                <td>Nyck De Vries</td>
-                <td>Mahindra Racing</td>
-                <td>18</td>
+                <td>Nelson Piquet Jr.</td>
+                <td>Cavaleiro Sports</td>
+                <td>470</td>
               </tr>
               <tr>
                 <td>19</td>
-                <td>Dan Ticktum</td>
-                <td>ERT Formula E Team</td>
-                <td>12</td>
+                <td>Gaetano Di Mauro</td>
+                <td>Cavaleiro Sports</td>
+                <td>467</td>
               </tr>
               <tr>
                 <td>20</td>
-                <td>Sérgio Sette Câmara</td>
-                <td>ERT Formula E Team</td>
-                <td>11</td>
+                <td>Átila Abreu</td>
+                <td>Pole Motosport</td>
+                <td>420</td>
               </tr>
               <tr>
                 <td>21</td>
-                <td>Jehan Daruvala</td>
-                <td>Maserati MSG Racing</td>
-                <td>8</td>
+                <td>Guilherme Salas</td>
+                <td>KTF Sports</td>
+                <td>389</td>
               </tr>
               <tr>
                 <td>22</td>
-                <td>Taylor Barnard</td>
-                <td>Neom McLaren</td>
-                <td>5</td>
+                <td>Zezinho Muggiati</td>
+                <td>KTF Sports</td>
+                <td>354</td>
               </tr>
               <tr>
                 <td>23</td>
-                <td>Lucas Di Grassi</td>
-                <td>ABT Formula E Team</td>
-                <td>4</td>
+                <td>Gianluca Petecof</td>
+                <td>Full T1me Sports</td>
+                <td>353</td>
               </tr>
               <tr>
                 <td>24</td>
-                <td>Joel Eriksson</td>
-                <td>Envision Racing</td>
-                <td>2</td>
+                <td>Cacá Bueno</td>
+                <td>KTF Sports</td>
+                <td>346</td>
               </tr>
               <tr>
                 <td>25</td>
-                <td>Kelvin Van der Linde</td>
-                <td>ABT Formula E Team</td>
-                <td>0</td>
+                <td>Vitor Baptista</td>
+                <td>Scuderia Chiarelli</td>
+                <td>329</td>
               </tr>
               <tr>
                 <td>26</td>
-                <td>Jordan King</td>
-                <td>Mahindra Racing</td>
-                <td>0</td>
+                <td>Allam Khodair</td>
+                <td>Blau Motor Sports</td>
+                <td>316</td>
               </tr>
               <tr>
                 <td>27</td>
-                <td>Paul Aron</td>
-                <td>Envision Racing</td>
-                <td>0</td>
+                <td>Lucas Kohl</td>
+                <td>Wokin Garra Racing</td>
+                <td>182</td>
               </tr>
               <tr>
                 <td>28</td>
-                <td>Caio Collet</td>
-                <td>Nissan Formula E Team</td>
-                <td>0</td>
+                <td>Marcos Gomes</td>
+                <td>KTF Sports</td>
+                <td>166</td>
+              </tr>
+              <tr>
+                <td>29</td>
+                <td>Gabriel Robe</td>
+                <td>Wokin Garra Racing</td>
+                <td>94</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>Luan Lopes</td>
+                <td>Scuderia Chiarelli</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td>Raphael Teixeira</td>
+                <td>KTF Sports</td>
+                <td>7</td>
               </tr>
             </tbody>
           </table>
