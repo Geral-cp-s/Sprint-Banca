@@ -80,7 +80,7 @@ const categorias = [
     nome: 'Stock Car',
     descricao: 'A Stock Car é uma categoria de automobilismo brasileira famosa por suas corridas emocionantes.',
     imagem: stockImg,
-    link: '#',
+    link: '/stock-car/mais-informacoes',
   },
   {
     id: 4,

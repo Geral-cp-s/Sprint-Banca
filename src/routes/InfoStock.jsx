@@ -21,8 +21,8 @@ const InfoStock = () => {
         A Fórmula E é uma emocionante categoria do automobilismo que destaca veículos elétricos competindo em circuitos urbanos ao redor do mundo. Com carros que atingem velocidades de até 280 km/h e potência de 340 cavalos, a competição combina tecnologia de ponta e sustentabilidade. Os pilotos enfrentam desafios em pistas que serpenteiam pelas cidades, proporcionando um espetáculo de estratégia e ultrapassagens audaciosas. A atmosfera vibrante dos fãs e o som impressionante dos motores elétricos tornam a Fórmula E uma experiência única, onde emoção e compromisso ambiental se encontram.
         </p>
         <LinksContainer>
-          <Acesso><Link to="/formula-e/equipes">Acessar as equipes</Link></Acesso>
-          <Acesso><Link to="/formula-e/pistas">Acessar o calendario</Link></Acesso>
+          <Acesso><Link to="/stock-car/equipes">Acessar as equipes</Link></Acesso>
+          <Acesso><Link to="/stock-car/pistas">Acessar o calendario</Link></Acesso>
         </LinksContainer>
       </CategoryInfo>
       <ClassificationTable>
