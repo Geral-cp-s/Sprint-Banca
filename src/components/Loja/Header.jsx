@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaShoppingCart } from 'react-icons/fa'; // Importa o ícone de carrinho
 
 const Header = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false); // Estado para controlar a sidebar
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen); // Alterna a visibilidade da sidebar
+  };
+
   return (
     <>
       <FreeShippingBanner>
@@ -13,12 +19,32 @@ const Header = () => {
           <NavItem>Pedidos</NavItem>
           <NavItem>Conta</NavItem>
           <NavItem>Entre em contato</NavItem>
-          <NavItem>
+          <NavItem onClick={toggleSidebar}>
             <FaShoppingCart size={24} color="black" /> {/* Ícone do carrinho */}
           </NavItem>
         </Nav>
       </HeaderContainer>
+      {isSidebarOpen && <Sidebar onClose={toggleSidebar} />}
     </>
+  );
+};
+
+const Sidebar = ({ onClose }) => {
+  return (
+    <SidebarContainer>
+      <CloseButton onClick={onClose}>X</CloseButton>
+      <h2 className='texto'>Produtos no Carrinho</h2>
+      {/* Aqui você pode mapear os produtos do carrinho */}
+      {/* Exemplo de produto */}
+      <ProductItem>
+        <img src="produto_imagem.jpg" alt="Produto" />
+        <div>
+          <h3 className='texto'>Nome do Produto</h3>
+          <p>Preço: R$100,00</p>
+        </div>
+      </ProductItem>
+      {/* Adicione mais produtos aqui */}
+    </SidebarContainer>
   );
 };
 
@@ -61,7 +87,7 @@ const NavItem = styled.div`
 `;
 
 const FreeShippingBanner = styled.div`
-  background-color: var(--black-color-light);
+  background-color: #d32f2f;
   color: #fff;
   text-align: center;
   padding: 10px 0; /* Aumenta o padding */
@@ -71,5 +97,43 @@ const FreeShippingBanner = styled.div`
 
   @media (max-width: 768px) {
     font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+  }
+`;
+
+const SidebarContainer = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  z-index: 1000;
+
+  .texto{
+    font-family: "Audiowide", sans-serif;
+    padding: 5px;
+    border: 2px solid var(--black-color-light);
+  }
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+`;
+
+const ProductItem = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+
+  img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
   }
 `;
