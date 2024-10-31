@@ -33,7 +33,7 @@ const CarouselContainer = styled.div`
 const ProductList = styled.div`
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: calc(100% * 2);
+  width: 100%; /* Ajuste para ocupar toda a largura */
 `;
 
 const ProductCard = styled.div`
@@ -52,7 +52,7 @@ const ProductCard = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    flex: 1 0 calc(100% - 10px); /* 1 produto por slide em telas menores */
+    flex: 1 0 100%; /* 1 produto por slide em telas menores */
   }
 `;
 
@@ -79,6 +79,24 @@ const ProductInfo = styled.div`
     font-size: 1rem;
     color: #fff;
     margin: 0;
+  }
+`;
+
+const Arrow = styled.div`
+  font-size: 45px;
+  cursor: pointer;
+  user-select: none;
+  color: #0077ff;
+  position: absolute;
+  z-index: 1;
+  padding: 0 10px;
+
+  &:first-child {
+    left: 10px;
+  }
+
+  &:last-child {
+    right: 10px;
   }
 `;
 
@@ -139,23 +157,7 @@ const Button = styled.button`
   }
 `;
 
-const Arrow = styled.div`
-  font-size: 45px;
-  cursor: pointer;
-  user-select: none;
-  color: #0077ff;
-  position: absolute;
-  z-index: 1;
-  padding: 0 10px;
 
-  &:first-child {
-    left: 0;
-  }
-
-  &:last-child {
-    right: 0;
-  }
-`;
 
 const Sidebar = styled.div`
   width: 250px;
