@@ -61,7 +61,7 @@ const NavItem = styled.div`
 `;
 
 const FreeShippingBanner = styled.div`
-  background-color: var(--black-color-light);
+  background-color: #d32f2f;
   color: #fff;
   text-align: center;
   padding: 10px 0; /* Aumenta o padding */
