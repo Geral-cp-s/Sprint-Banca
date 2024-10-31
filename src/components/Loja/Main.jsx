@@ -1,123 +1,233 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-
-
-
-
-const MainContent = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
-
-  const products = [
-    { id: 1, img: '../../../img/produtos/bone.webp', name: 'Boné New Era Repreve 9FORTY', price: 'R$160,00' },
-    { id: 2, img: '../../../img/produtos/mochila.jpg', name: 'Mochila Dobrável', price: 'R$250,00' },
-    { id: 3, img: '../../../img/produtos/garrafa.webp', name: 'Garrafa de Água Gradiente', price: 'R$50,00' },
-    { id: 4, img: '../../../img/produtos/camiseta.jpg', name: 'Camiseta Oficial Fórmula E', price: 'R$180,00' },
-    { id: 5, img: '../../../img/produtos/jaqueta.jpg', name: 'Jaqueta Impermeável', price: 'R$400,00' },
-    { id: 6, img: '../../../img/produtos/gymsack.jpg', name: 'Pull Bag Camuflada', price: 'R$60,00' },
-    { id: 7, img: '../../../img/produtos/chaveiro.jpg', name: 'Chaveiro Oficial', price: 'R$30,00' },
-    { id: 8, img: '../../../img/produtos/tokyo.jpg', name: 'Camiseta E-Prix de Tóquio', price: 'R$110,00' },
-    { id: 9, img: '../../../img/produtos/moletbranco.jpg', name: 'Moletom Gradiente', price: 'R$230,00' }
-  ];
-
-  const itemsPerSlide = 3; 
-  const totalSlides = Math.ceil(products.length / itemsPerSlide);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === totalSlides ? 1 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 1 ? totalSlides : prev - 1));
-  };
-
-  return (
-    <ContentContainer>
-      <Banner>
-        <BannerContent>
-          <h1>Venda de campeonato</h1>
-          <p>50% de desconto na linha oficial da Fórmula E e da FIA</p>
-          <Button>Compre Agora</Button>
-        </BannerContent>
-        <img src="/img/Racing.png" alt="" />
-      </Banner>
-
-      <CarouselContainer>
-        <Arrow onClick={prevSlide}>&#8249;</Arrow>
-        <ProductList style={{ transform: `translateX(-${((currentSlide - 1) * 100) / itemsPerSlide}%)` }}>
-          {products.map((product) => (
-            <ProductCard key={product.id}>
-              <ProductImage src={product.img} alt={product.name} />
-              <ProductInfo>
-                <h3>{product.name}</h3>
-                <p>{product.price}</p>
-              </ProductInfo>
-            </ProductCard>
-          ))}
-        </ProductList>
-        <Arrow onClick={nextSlide}>&#8250;</Arrow>
-      </CarouselContainer>
-
-      <CarouselContainer>
-        <Arrow onClick={prevSlide}>&#8249;</Arrow>
-        <ProductList style={{ transform: `translateX(-${((currentSlide - 1) * 100) / itemsPerSlide}%)` }}>
-          {products.map((product) => (
-            <ProductCard key={product.id}>
-              <ProductImage src={product.img} alt={product.name} />
-              <ProductInfo>
-                <h3>{product.name}</h3>
-                <p>{product.price}</p>
-              </ProductInfo>
-            </ProductCard>
-          ))}
-        </ProductList>
-        <Arrow onClick={nextSlide}>&#8250;</Arrow>
-      </CarouselContainer>
-      
-      <CarouselContainer>
-        <Arrow onClick={prevSlide}>&#8249;</Arrow>
-        <ProductList style={{ transform: `translateX(-${((currentSlide - 1) * 100) / itemsPerSlide}%)` }}>
-          {products.map((product) => (
-            <ProductCard key={product.id}>
-              <ProductImage src={product.img} alt={product.name} />
-              <ProductInfo>
-                <h3>{product.name}</h3>
-                <p>{product.price}</p>
-              </ProductInfo>
-            </ProductCard>
-          ))}
-        </ProductList>
-        <Arrow onClick={nextSlide}>&#8250;</Arrow>
-      </CarouselContainer>
-
-      <Desconto>
-        <h1>Equipes em destaque</h1>
-        <div>
-          <Card>
-            <img className='dimg' src="/img/02022021_TESTHP_01.webp" alt="TAG Heuer Porsche" />
-            <h2>TAG Heuer Porsche</h2>
-            <div className="desconto">Até 50% de desconto</div>
-            <button>Compre agora</button>
-          </Card>
-
-          <Card>
-            <img className='dimg' src="/img/jordan-kin.webp" alt="MAHINDRA" />
-            <h2>MAHINDRA</h2>
-            <div className="desconto">Até 50% de desconto</div>
-            <button>Compre agora</button>
-          </Card>
-        </div>
-      </Desconto>
-    </ContentContainer>
-  );
-};
-
-export default MainContent;
-
 const ContentContainer = styled.div`
+  display: flex;
   padding: 20px;
 `;
 
+const CarouselContainer = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  height: 500px; /* Aumentei a altura do carrossel para 500px */
+
+  h1 {
+    font-size: 36px;
+    color: #fff;
+    margin: 0 0 20px;
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+const ProductList = styled.div`
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(100% * 2); /* Definido para mostrar 2 produtos por slide */
+`;
+
+const ProductCard = styled.div`
+  background-color: var(--black-color-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  flex: 1 0 calc(50% - 10px); /* 2 produtos por slide */
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* Para empilhar imagem e informações */
+  align-items: center; /* Centralizar o conteúdo */
+  
+  min-height: 400px; /* Aumentei a altura mínima do cartão para 400px */
+  overflow: hidden; /* Para evitar que o conteúdo extravase */
+
+  @media (max-width: 768px) {
+    flex: 1 0 calc(100% - 10px);
+  }
+`;
+
+const ProductImage = styled.img`
+  width: 100%; /* A imagem ocupa toda a largura do cartão */
+  height: auto; /* Ajusta a altura para manter a proporção */
+  max-height: 300px; /* Aumentei a altura máxima da imagem para 300px */
+  object-fit: cover; /* Corta a imagem para preencher sem distorcer */
+  border-radius: 8px;
+  margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+`;
+
+const ProductInfo = styled.div`
+  text-align: center;
+  margin-top: 10px;
+
+  h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 5px 0; /* Adicione margem para espaçamento */
+  }
+
+  p {
+    font-size: 1rem;
+    color: #fff;
+    margin: 0; /* Remove margem para melhor alinhamento */
+  }
+`;
+
+const Banner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--black-color-light);
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 250px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+const BannerContent = styled.div`
+  color: white;
+  text-align: center;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Audiowide", sans-serif;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+  }
+`;
+
+const Button = styled.button`
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #00c3ff;
+  }
+`;
+
+const Arrow = styled.div`
+  font-size: 45px;
+  cursor: pointer;
+  user-select: none;
+  color: #0077ff;
+  position: absolute;
+  z-index: 1;
+  padding: 0 10px;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-child {
+    right: 0;
+  }
+`;
+
+const Sidebar = styled.div`
+  width: 250px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 20px; /* Espaço entre a sidebar e o conteúdo principal */
+`;
+
+const FilterSection = styled.div`
+  margin-bottom: 20px;
+`;
+
+const FilterTitle = styled.h3`
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: "Audiowide", sans-serif;
+`;
+
+const Dropdown = styled.select`
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+`;
+
+
+
+const NewSection = styled.div`
+  margin: 20px 0;
+  h2{
+    font-size: 36px;
+    color: black;
+    margin: 0 0 20px;
+    font-family: "Audiowide", sans-serif;
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+const ProductGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const NewProductCard = styled.div`
+  background-color: #fff;
+  border: 2px solid var(--black-color-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  flex: 1 0 calc(25% - 20px);
+  min-width: 180px;
+  max-width: 220px;
+  height: 300px;
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: #0077ff;
+    margin: 10px 0;
+  }
+
+  p {
+    font-size: 16px;
+    color: #333;
+  }
+
+  
+`;
+
+// Estilos da seção de desconto
 const Desconto = styled.div`
   display: flex;
   flex-direction: column;
@@ -187,141 +297,160 @@ const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 90%; /* Ocupa mais espaço em telas pequenas */
+    width: 90%;
   }
 `;
 
-const Banner = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color:var(--black-color-light);
-  border-radius: 12px;
-  padding: 20px;
-  min-height: 250px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+const MainContent = () => {
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const [filters, setFilters] = useState({
+    category: '',
+    type: ''
+  });
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
+  const products = [
+    { id: 1, img: '../../../img/produtos/bone.webp', name: 'Boné New Era Repreve 9FORTY', price: 'R$160,00', category: 'bone', modality: 'formulaE' },
+    { id: 2, img: '../../../img/produtos/mochila.jpg', name: 'Mochila Dobrável', price: 'R$250,00', category: 'acessorios', modality: 'stockCar' },
+    { id: 3, img: '../../../img/produtos/garrafa.webp', name: 'Garrafa de Água Gradiente', price: 'R$50,00', category: 'acessorios', modality: 'formulaE' },
+    { id: 4, img: '../../../img/produtos/camiseta.jpg', name: 'Camiseta Oficial Fórmula E', price: 'R$180,00', category: 'camisetas', modality: 'formulaE' },
+    { id: 5, img: '../../../img/produtos/jaqueta.jpg', name: 'Jaqueta Impermeável', price: 'R$400,00', category: 'jaquetas', modality: 'stockCar' },
+    { id: 6, img: '../../../img/produtos/gymsack.jpg', name: 'Pull Bag Camuflada', price: 'R$60,00', category: 'acessorios', modality: 'formulaTruck' },
+    { id: 7, img: '../../../img/produtos/chaveiro.jpg', name: 'Chaveiro Oficial', price: 'R$30,00', category: 'acessorios', modality: 'formulaE' },
+    { id: 8, img: '../../../img/produtos/tokyo.jpg', name: 'Camiseta E-Prix de Tóquio', price: 'R$110,00', category: 'camisetas', modality: 'formulaE' },
+    { id: 9, img: '../../../img/produtos/moletbranco.jpg', name: 'Moletom Gradiente', price: 'R$230,00', category: 'jaquetas', modality: 'formulaE' }
+  ];
 
-const BannerContent = styled.div`
-  color: white;
-  text-align: center;
+  const newProducts = [
+    // Bonés
+    { id: 10, img: 'public/img/loja/boneFE.png', name: 'Boné Coleção Motorsport', price: 'R$200,00', category: 'Bonés', modality: 'Fórmula E' },
+    { id: 11, img: 'public/img/loja/boneSC.png', name: 'Boné Estilo Stock Car', price: 'R$180,00', category: 'Bonés', modality: 'Stock Car' },
+    { id: 12, img: 'public/img/loja/image.png', name: 'Boné Fórmula Truck', price: 'R$150,00', category: 'Bonés', modality: 'Fórmula Truck' },
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-family: "Audiowide", sans-serif;
-  }
+    // Camisetas
+    { id: 13, img: 'public/img/loja/CAMISafe.png', name: 'Camiseta Fórmula E', price: 'R$200,00', category: 'Camisetas', modality: 'Fórmula E' },
+    { id: 14, img: 'public/img/loja/CAMISAft.png', name: 'Camiseta Fórmula Truck', price: 'R$180,00', category: 'Camisetas', modality: 'Fórmula Truck' },
+    { id: 15, img: 'public/img/loja/camisaSC.png', name: 'Camiseta Stock Car', price: 'R$160,00', category: 'Camisetas', modality: 'Stock Car' },
 
-  p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #e0e0e0;
-  }
-`;
+    // Acessórios
+    { id: 16, img: 'public/img/loja/canecaFE.png', name: 'Caneca Fórmula E', price: 'R$45,00', category: 'Acessórios', modality: 'Fórmula E' },
+    { id: 17, img: 'public/img/loja/chaveiroFT.png', name: 'Chaveiro Luxo Fórmula Truck', price: 'R$75,00', category: 'Acessórios', modality: 'Fórmula Truck' },
+    { id: 18, img: 'public/img/loja/almofadaSC.webp', name: 'Almofada Stock Car', price: 'R$90,00', category: 'Acessórios', modality: 'Stock Car' },
 
-const BannerImage = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    // Casacos
+    { id: 19, img: 'public/img/loja/casacoFE.png', name: 'Casaco Fórmula E', price: 'R$300,00', category: 'Casacos', modality: 'Fórmula E' },
+    { id: 20, img: 'public/img/loja/casacoFT.png', name: 'Casaco Fórmula Truck', price: 'R$280,00', category: 'Casacos', modality: 'Fórmula Truck' },
+    { id: 21, img: 'public/img/loja/casacoSC.png', name: 'Casaco Stock Car', price: 'R$290,00', category: 'Casacos', modality: 'Stock Car' },
 
-  @media (min-width: 768px) {
-    width: 400px;
-  }
-`;
+    
+  ];
 
-const Button = styled.button`
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  // Função para filtrar os produtos com base nos filtros selecionados
+  const filteredNewProducts = newProducts.filter(product => {
+    const categoryMatch = filters.category ? product.category.toLowerCase() === filters.category.toLowerCase() : true;
+    const modalityMatch = filters.type ? product.modality.toLowerCase() === filters.type.toLowerCase() : true;
+    return categoryMatch && modalityMatch;
+  });
 
-  &:hover {
-    background-color: #00c3ff;
-  }
-`;
 
-const CarouselContainer = styled.div`
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-top: 20px;
-`;
 
-const Arrow = styled.div`
-  font-size: 45px;
-  cursor: pointer;
-  user-select: none;
-  color: #0077ff;
-  position: absolute;
-  z-index: 1;
-  padding: 0 10px;
+  const itemsPerSlide = 3;
+  const totalSlides = Math.ceil(products.length / itemsPerSlide);
 
-  &:first-child {
-    left: 0;
-  }
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === totalSlides ? 1 : prev + 1));
+  };
 
-  &:last-child {
-    right: 0;
-  }
-`;
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 1 ? totalSlides : prev - 1));
+  };
 
-const ProductList = styled.div`
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: calc(100% * 3);
+  return (
+    <ContentContainer>
+      <Sidebar>
+        <FilterSection>
+          <FilterTitle>Filtrar por Categoria</FilterTitle>
+          <Dropdown onChange={(e) => setFilters({ ...filters, category: e.target.value })}>
+            <option value="">Tudo</option>
+            <option value="bone">Bonés</option>  {/* Aqui está o valor correto em minúsculas */}
+            <option value="camisetas">Camisetas</option>
+            <option value="jaquetas">Jaquetas</option>
+            <option value="acessorios">Acessórios</option>  {/* Aqui está o valor correto em minúsculas */}
+          </Dropdown>
+        </FilterSection>
+        <FilterSection>
+          <FilterTitle>Filtrar por Modalidade</FilterTitle>
+          <Dropdown onChange={(e) => setFilters({ ...filters, type: e.target.value })}>
+            <option value="">Tudo</option>
+            <option value="formulaE">Fórmula E</option>
+            <option value="stockCar">Stock Car</option>
+            <option value="formulaTruck">Fórmula Truck</option>
+          </Dropdown>
+        </FilterSection>
+      </Sidebar>
 
-  @media (max-width: 768px) {
-    width: 100%;
-    flex-wrap: nowrap; /* Mantém os itens em uma linha em telas pequenas */
-  }
-`;
+      <div style={{ flex: 1 }}> {/* Para o conteúdo principal */}
+        <Banner>
+          <BannerContent>
+            <h1>Venda de campeonato</h1>
+            <p>50% de desconto na linha oficial da Fórmula E e da FIA</p>
+            <Button>Compre Agora</Button>
+          </BannerContent>
+          <img src="/img/Racing.png" alt="" />
+        </Banner>
 
-const ProductCard = styled.div`
-  background-color: var(--black-color-light);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 10px;
-  margin: 5px; /* Margem ajustada */
-  flex: 1 0 calc(33.333% - 10px); 
-  color: #fff;
+        <h1 style={{ textAlign: 'center', marginBottom: '20px', fontFamily: 'Audiowide, sans-serif' }}>
+          Produtos em Destaque
+        </h1>
+        <CarouselContainer>
+          <Arrow onClick={prevSlide}>&#8249;</Arrow>
+          <ProductList style={{ transform: `translateX(-${((currentSlide - 1) * 100) / itemsPerSlide}%)` }}>
+            {products.map((product) => (
+              <ProductCard key={product.id}>
+                <ProductImage src={product.img} alt={product.name} />
+                <ProductInfo>
+                  <h3>{product.name}</h3>
+                  <p>{product.price}</p>
+                </ProductInfo>
+              </ProductCard>
+            ))}
+          </ProductList>
+          <Arrow onClick={nextSlide}>&#8250;</Arrow>
+        </CarouselContainer>
 
-  @media (max-width: 768px) {
-    flex: 1 0 calc(100% - 10px); /* Um produto por linha em telas pequenas */
-  }
-`;
+        <NewSection>
+          <h2>Novo em nosso estoque!</h2>
+          <ProductGrid>
+            {filteredNewProducts.map((product) => (
+              <NewProductCard key={product.id}>
+                <img src={product.img} alt={product.name} />
+                <h3>{product.name}</h3>
+                <p>{product.price}</p>
+              </NewProductCard>
+            ))}
+          </ProductGrid>
+        </NewSection>
 
-const ProductImage = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-`;
+        <Desconto>
+          <h1>Equipes em destaque</h1>
+          <div>
+            <Card>
+              <img className='dimg' src="/img/02022021_TESTHP_01.webp" alt="TAG Heuer Porsche" />
+              <h2>TAG Heuer Porsche</h2>
+              <div className="desconto">Até 50% de desconto</div>
+              <button>Compre agora</button>
+            </Card>
 
-const ProductInfo = styled.div`
-  margin-top: 10px;
+            <Card>
+              <img className='dimg' src="/img/jordan-kin.webp" alt="MAHINDRA" />
+              <h2>MAHINDRA</h2>
+              <div className="desconto">Até 50% de desconto</div>
+              <button>Compre agora</button>
+            </Card>
+          </div>
+        </Desconto>
+      </div>
+    </ContentContainer>
+  );
+};
 
-  h3 {
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  p {
-    font-size: 12px;
-    color: #333;
-    color: #fff;
-  }
-`;
+export default MainContent;
