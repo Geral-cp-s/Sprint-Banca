@@ -25,6 +25,11 @@ import PistasTruck from './routes/PistasTruck.jsx'
 import InfoTruck from './routes/InfoTruck.jsx'
 import InfoFormE from './routes/InfoFormE.jsx'
 import Categorias from './routes/Categorias.jsx'
+import PistasStock from './routes/PistasStock.jsx'
+import EquipesStock from './routes/EquipesStock.jsx'
+import InfoStock from './routes/InfoStock.jsx'
+
+
 
 
 const router = createBrowserRouter([
@@ -38,12 +43,14 @@ const router = createBrowserRouter([
       {path:'/', element:<Home/>},
       {path:'/formula-e/pistas', element:<Pistas/>},
       {path:'/formula-truck/pistas', element:<PistasTruck/>},
+      {path:'/stock-car/pistas', element:<PistasStock/>},
       {path:'/login', element:<Login/>},
       {path:'/quem-somos', element:<QuemSomos/>},
       {path:'/comparativos', element:<Comparativos/>},
       {path:'/projeto', element:<Projeto/>},
       {path:'/formula-e/equipes', element:<Equipes/>},
       {path:'/formula-truck/pilotos', element:<EquipesTruck/>},
+      {path:'/stock-car/equipes', element:<EquipesStock/>},
       {path:'/forum', element:<Forum/>},
       {path:'/conta', element:<Conta/>},
       {path:'/assinatura', element:<Assinatura/>},
@@ -54,6 +61,7 @@ const router = createBrowserRouter([
       {path:'/desenho', element:<Desenho/>},
       {path:'/formula-truck/mais-informacoes', element:<InfoTruck/>},
       {path:'/formula-e/mais-informacoes', element:<InfoFormE/>},
+      {path:'/stock-car/mais-informacoes', element:<InfoStock/>},
       {path:'/categorias', element:<Categorias/>},
 
       //Chamando as equipes

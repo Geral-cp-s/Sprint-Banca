@@ -66,8 +66,9 @@ const Header = () => {
                   Stock Car <i className="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
                 <ul className="dropdown__menu">
-                  <li><Link to="/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
-                  <li><Link to="/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
+                  <li><Link to="/stock-car/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
+                  <li><Link to="/stock-car/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
+                  <li><Link to="/stock-car/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mais informações</Link></li>
 
                 </ul>
               </li>
