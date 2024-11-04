@@ -33,7 +33,7 @@ const BackgroundVideo = styled.video`
 // Estilização do Texto
 const Text = styled.h1`
   font-size: 1.3rem;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+  background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente para o texto */
   padding: 20px;
   border-radius: 10px;
   position: absolute;
@@ -84,6 +84,7 @@ const LojaText = styled.p`
   color: #ddd;
   margin-bottom: 20px;
   max-width: 500px; /* Reduzi a largura máxima */
+  
 `;
 
 // Estilização do botão da Loja
@@ -137,7 +138,7 @@ export default function Index() {
 
         {/* Texto Centralizado */}
         <Text></Text>
-        <Text><strong>G4 Rancing</strong> <br/><br/>Todas as categorias em um só lugar</Text>
+        <Text><strong>G4 Racing</strong> <br/><br/>Todas as categorias em um só lugar</Text>
       </Section>
 
       {/* Seção da Loja */}
