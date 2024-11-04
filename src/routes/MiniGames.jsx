@@ -31,7 +31,7 @@ const Card = styled(Link)`
   border: 1px solid #ddd;
   border-radius: 8px;
   width: 320px; // Aumentando a largura
-  height: 400px; // Aumentando a altura
+  height: 500px; // Ajustando altura automaticamente para caber a descrição
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
@@ -64,14 +64,34 @@ const GameImage = styled.img`
   border-radius: 8px; // Para bordas arredondadas
 `;
 
-
+const GameDescription = styled.p`
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  padding: 0 10px;
+`;
 
 // Componente principal
 const MiniGames = () => {
   const games = [
-    { title: 'Jogo da memoria', link: '/memoria', img: '/img/jogos/jogo-da-memoria-para-imprimir-1000x525.png' }, 
-    { title: 'Corrida de linhas', link: '/desenho', img: '/img/jogos/0,,20559277-FMM,00.png' },
-    { title: 'Corrida Maluca', link: '/corrida', img: '/img/jogos/image.png' },
+    {
+      title: 'Jogo da Memória',
+      link: '/memoria',
+      img: '/img/jogos/jogo-da-memoria-para-imprimir-1000x525.png',
+      description: 'Teste sua memória neste jogo clássico! Encontre os pares o mais rápido possível e desafie suas habilidades cognitivas.',
+    },
+    {
+      title: 'Corrida de Linhas',
+      link: '/desenho',
+      img: '/img/jogos/0,,20559277-FMM,00.png',
+      description: 'Desenhe a trajetória que o carro deve seguir e comece a corrida. Evite obstáculos e complete o máximo de voltas possível.',
+    },
+    {
+      title: 'Corrida Maluca',
+      link: '/corrida',
+      img: '/img/jogos/image.png',
+      description: 'Uma corrida cheia de ação e surpresas! Controle seu piloto e desvie dos adversários pelo maior tempo possivel!.',
+    },
   ];
 
   return (
@@ -83,6 +103,7 @@ const MiniGames = () => {
             <GameImage src={game.img} alt={game.title} />
             <CardContent>
               <CardTitle>{game.title}</CardTitle>
+              <GameDescription>{game.description}</GameDescription>
             </CardContent>
           </Card>
         ))}
