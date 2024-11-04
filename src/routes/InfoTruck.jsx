@@ -275,16 +275,6 @@ const InfoTruck = () => {
             <h3>Treinos livres abrem a programação da 4ª etapa da Fórmula Truck em Campo Grande</h3>
             <p>CAMPO GRANDE (MS) – As emoções da 4ª etapa da Fórmula Truck terão início nesta sexta-feira (28), no Autódromo Internacional Orlando...</p>
           </NewsCard>
-          <NewsCard>
-            <NewsImage src={newsImage5} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Fórmula Truck valerá por dois campeonatos em Campo Grande</h3>
-            <p>CAMPO GRANDE (MS) – Muitas emoções. É o que reserva a quarta prova da temporada da Fórmula Truck, a ser disputada no próximo domingo...</p>
-          </NewsCard>
-          <NewsCard>
-            <NewsImage src={newsImage6} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Fabrício Berton, o piloto da casa na Fórmula Truck em Campo Grande</h3>
-            <p>CAMPO GRANDE (MS) – Um dos estreantes da categoria nesta temporada, Fabrício Berton  viverá no próximo domingo (30), a experiência de sua...</p>
-          </NewsCard>
           {/* Adicione mais cards conforme necessário */}
         </NewsGrid>
       </NewsSection>
