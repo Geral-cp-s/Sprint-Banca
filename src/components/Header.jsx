@@ -50,29 +50,24 @@ const Header = () => {
             <ul className="nav__list">
               <li><Link to="/loja" className="nav__link" onClick={() => setMenuOpen(false)}>Loja</Link></li>
               <li><Link to="/minigames" className="nav__link" onClick={() => setMenuOpen(false)}>Jogos</Link></li>
-              <li className="dropdown__item">
-                <div className="nav__link">
-                  Formula Truck <i className="ri-arrow-down-s-line dropdown__arrow"></i>
-                </div>
-                <ul className="dropdown__menu">
-                  <li><Link to="/formula-truck/pilotos" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas os pilotos</Link></li>
-                  <li><Link to="/formula-truck/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
-                  <li><Link to="/formula-truck/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mais Informações</Link></li>
-                </ul>
-              </li>
+
+              <li><Link to="/stock-car/mais-informacoes" className="nav__link" onClick={() => setMenuOpen(false)}>Stock Car</Link></li>
+
+              <li><Link to="/formula-truck/mais-informacoes" className="nav__link" onClick={() => setMenuOpen(false)}>Fórmula Truck</Link></li>
 
               <li className="dropdown__item">
                 <div className="nav__link">
-                  Stock Car <i className="ri-arrow-down-s-line dropdown__arrow"></i>
+                  Categorias <i className="ri-arrow-down-s-line dropdown__arrow"></i>
                 </div>
                 <ul className="dropdown__menu">
-                  <li><Link to="/stock-car/equipes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Todas as equipes</Link></li>
-                  <li><Link to="/stock-car/pistas" className="dropdown__link" onClick={() => setMenuOpen(false)}>Calendário</Link></li>
-                  <li><Link to="/stock-car/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mais informações</Link></li>
+                  <li><Link to="/rally-sertoes/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Rally dos Sertões</Link></li>
+
+                  <li><Link to="/formula-e/mais-informacoes" className="dropdown__link" onClick={() => setMenuOpen(false)}>Fórmula E</Link></li>
+
+                  <li><Link to="/categorias" className="dropdown__link" onClick={() => setMenuOpen(false)}>Mais categorias</Link></li>
 
                 </ul>
               </li>
-              <li><Link to="/categorias" className="nav__link" onClick={() => setMenuOpen(false)}>Categorias</Link></li>
 
               <li className="dropdown__item">
                 <div className="nav__link">

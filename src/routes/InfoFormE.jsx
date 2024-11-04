@@ -233,16 +233,6 @@ const InfoFormE = () => {
             <h3>Buemi e Frijns retornam com a Envision Racing para a 11ª temporada</h3>
             <p>A Envision Racing tem o prazer de confirmar uma escalação de pilotos inalterada para a Temporada 11 do Campeonato Mundial de Fórmula E da ABB FIA. Sébastien Buemi e Robin Frijns continuarão com a equipe para a Temporada 11 do Campeonato Mundial de Fórmula E da ABB FIA.</p>
           </NewsCard>
-          <NewsCard>
-            <NewsImage src={newsImage5} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Fórmula E abre inscrições para o Fundo Better Futures da Temporada 11</h3>
-            <p>A Fórmula E lançou hoje o processo de inscrição para seu principal programa de apoio beneficente, o Better Futures Fund, que fornecerá suporte direto a projetos de impacto local e causas em todos os locais de corrida na 11ª temporada.</p>
-          </NewsCard>
-          <NewsCard>
-            <NewsImage src={newsImage6} alt="Notícia sobre a Fórmula Truck" />
-            <h3>Lucas di Grassi: “10 anos de trabalho duro e noites sem dormir”</h3>
-            <p>Dez anos atrás, hoje: Lucas di Grassi venceu o primeiro E-Prix para a ABT em Pequim. Desde então, a Fórmula E cresceu de força em força.</p>
-          </NewsCard>
           {/* Adicione mais cards conforme necessário */}
         </NewsGrid>
       </NewsSection>

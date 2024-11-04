@@ -15,13 +15,13 @@ const InfoStock = () => {
     <Container>
       <TruckImage src={carImage} alt="Caminhão de corrida" />
       <CategoryInfo>
-        <h2>Sobre a Fórmula-E</h2>
+        <h2>Sobre a Stock Car</h2>
         <p>
         A Stock Car Brasil, criada em 1979, é uma das principais categorias de automobilismo do país. Com carros inspirados em modelos populares, mas equipados com motores V8 potentes, a categoria garante corridas equilibradas e emocionantes graças à padronização dos veículos. O campeonato é realizado em diversas cidades brasileiras, incluindo a famosa "Corrida do Milhão". Nomes como Ingo Hoffmann, Cacá Bueno e Rubens Barrichello já passaram pela Stock Car, que também adota o etanol como combustível, destacando seu compromisso com a sustentabilidade.
         </p>
         <LinksContainer>
           <Acesso><Link to="/stock-car/equipes">Acessar as equipes</Link></Acesso>
-          <Acesso><Link to="/stock-car/pistas">Acessar o calendario</Link></Acesso>
+          {/* <Acesso><Link to="/stock-car/pistas">Acessar o calendario</Link></Acesso> */}
         </LinksContainer>
       </CategoryInfo>
       <ClassificationTable>
