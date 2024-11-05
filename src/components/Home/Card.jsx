@@ -58,10 +58,10 @@ const Categories = styled.section`
 
 function Card() {
   const categories = [
-    { name: 'Formula E', description: 'Electric racing at its finest.', bgImage: formulaEImage, link: '/formula-e/mais-informacoes' },
-    { name: 'Formula Truck', description: 'Heavy-duty racing.', bgImage: formulaTruckImage, link: '/formula-truck/mais-informacoes' },
-    { name: 'Rally', description: 'Off-road adventure and speed.', bgImage: rallyImage, link: '/rally-sertoes/mais-informacoes' },
-    { name: 'Endurance', description: 'The ultimate test of durability.', bgImage: enduranceImage, link: '#' },
+    { name: 'Formula E', description: 'Corrida com carros elétricos, focada em sustentabilidade.', bgImage: formulaEImage, link: '/formula-e/mais-informacoes' },
+    { name: 'Formula Truck', description: 'Corrida de caminhões, unindo força e velocidade.', bgImage: formulaTruckImage, link: '/formula-truck/mais-informacoes' },
+    { name: 'Rally', description: 'Competição off-road pelo Brasil', bgImage: rallyImage, link: '/rally-sertoes/mais-informacoes' },
+    { name: 'Endurance', description: 'Corrida de longa duração que avalia resistência.', bgImage: enduranceImage, link: '#' },
   ];
 
   return (
