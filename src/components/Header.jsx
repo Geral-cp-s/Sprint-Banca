@@ -51,9 +51,7 @@ const Header = () => {
               <li><Link to="/loja" className="nav__link" onClick={() => setMenuOpen(false)}>Loja</Link></li>
               <li><Link to="/minigames" className="nav__link" onClick={() => setMenuOpen(false)}>Jogos</Link></li>
 
-              <li><Link to="/stock-car/mais-informacoes" className="nav__link" onClick={() => setMenuOpen(false)}>Stock Car</Link></li>
-
-              <li><Link to="/formula-truck/mais-informacoes" className="nav__link" onClick={() => setMenuOpen(false)}>Fórmula Truck</Link></li>
+              
 
               <li className="dropdown__item">
                 <div className="nav__link">
