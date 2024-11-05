@@ -2,13 +2,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
-import carImage from '../../public/img/formula-e/carro.png';
+import carImage from '../../public/img/Formula-E/carro.png';
 import newsImage1 from '../../public/img/noticia/img1.webp';
 import newsImage2 from '../../public/img/noticia/img2.webp';
 import newsImage3 from '../../public/img/noticia/img3.webp';
 import newsImage4 from '../../public/img/noticia/img4.webp';
-import newsImage5 from '../../public/img/noticia/img5.webp';
-import newsImage6 from '../../public/img/noticia/img6.webp';
+
 
 
 const InfoFormE = () => {
