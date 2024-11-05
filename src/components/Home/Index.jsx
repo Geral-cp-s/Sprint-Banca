@@ -137,8 +137,7 @@ export default function Index() {
         </BackgroundVideo>
 
         {/* Texto Centralizado */}
-        <Text></Text>
-        <Text><strong>G4 Racing</strong> <br/><br/>Todas as categorias em um só lugar</Text>
+        <Text><strong>G4 Racing</strong><br/><br/>Todas as categorias em um só lugar</Text>
       </Section>
 
       {/* Seção da Loja */}
