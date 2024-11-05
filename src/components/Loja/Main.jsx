@@ -112,8 +112,8 @@ const Banner = styled.div`
   margin-bottom: 30px;
 
   .imgban{
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    // height: 100%;
   }
 
   @media (min-width: 768px) {

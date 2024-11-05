@@ -48,10 +48,11 @@ const Header = () => {
 
           <div ref={menuRef} className={`nav__menu ${menuOpen ? 'show-menu' : ''}`} id="nav-menu">
             <ul className="nav__list">
+              <li><Link to="/" className="nav__link" onClick={() => setMenuOpen(false)}>Home</Link></li>
+
               <li><Link to="/loja" className="nav__link" onClick={() => setMenuOpen(false)}>Loja</Link></li>
               <li><Link to="/minigames" className="nav__link" onClick={() => setMenuOpen(false)}>Jogos</Link></li>
 
-              
 
               <li className="dropdown__item">
                 <div className="nav__link">
